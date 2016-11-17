@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "oopphp\\": "public/src"
+            "Oopphp\\": "public/src"
         }
     },
 
@@ -23,6 +23,10 @@
             "email": "webart.video@gmail.com"
         }
     ],
+    "scripts": {
+        "test": "./vendor/bin/kahlan --istanbul=./public/coverage.json  --coverage=4 --spec=./public/spec --src=./public/src && (cd ./public; istanbul report);",
+        "report": "(cd ./public; istanbul report);"
+    },
     "minimum-stability": "alpha",
     "config": {
         "preferred-install": "dist",
