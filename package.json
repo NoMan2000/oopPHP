@@ -1,0 +1,26 @@
+{
+  "name": "oop-php",
+  "version": "1.0.0",
+  "description": "Object-oriented PHP",
+  "main": "index.js",
+  "dependencies": {
+    "webpack": "^1.13.3"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "webpack": "^1.13.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoMan2000/oopPHP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NoMan2000/oopPHP/issues"
+  },
+  "homepage": "https://github.com/NoMan2000/oopPHP#readme"
+}

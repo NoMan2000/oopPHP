@@ -1,0 +1,33 @@
+{
+    "name": "noman2000/oop-php",
+    "description": "A learning package for OOP PHP",
+    "require": {
+        "illuminate/support": "^5.3",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "kahlan/kahlan": "^3.0",
+        "laravel/homestead": "^3.0",
+        "psy/psysh": "^0.7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "oopphp\\": "public/src"
+        }
+    },
+
+    "license": "Apache 2.0",
+    "authors": [
+        {
+            "name": "Michael Soileau",
+            "email": "webart.video@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "store-auths": true,
+        "process-timeout": 2000
+    }
+}
