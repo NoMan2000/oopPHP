@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/BeginnerTest.php</title>
+    <title>Code coverage report for src/GenericClass.php</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">src/</a> BeginnerTest.php
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> GenericClass.php
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -32,7 +32,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">75% </span>
@@ -80,8 +80,7 @@
 35
 36
 37
-38
-39</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+38</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -99,15 +98,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -116,7 +111,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;?php
@@ -126,36 +124,35 @@ namespace Oopphp;
 <span class="cstat-no" title="statement not covered" >re</span>quire_once __DIR__ . '/../bootstrap.php';
 &nbsp;
 /**
- * This class is nothing more than a 'degenerate' class meant to test that the testing framework is up and running.
- * Class BeginnerTest
+ * Class GenericClass
  * @package Oopphp
  */
-class BeginnerTest
+class GenericClass
 {
     /**
-     * @return bool
+     * @var int
      */
-    public function isTrue() : bool
+    private $intProperty = 0;
+&nbsp;
+    /**
+     * @return int
+     */
+    public function getIntProperty(): int
     {
-        return true;
+        return $this-&gt;intProperty;
     }
 &nbsp;
     /**
-     * @return bool
+     * @param int $intProperty
+     * @return GenericClass
      */
-    public function isFalse() : bool
+    public function setIntProperty(int $intProperty): GenericClass
     {
-        return false;
+        $this-&gt;intProperty = $intProperty;
+        return $this;
     }
 &nbsp;
-    /**
-     * @param bool $boolean
-     * @return bool
-     */
-    public function isBool(bool $boolean): bool
-    {
-        return $boolean;
-    }
+&nbsp;
 }
 &nbsp;</pre></td></tr>
 </table></pre>

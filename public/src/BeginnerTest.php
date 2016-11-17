@@ -5,6 +5,7 @@ namespace Oopphp;
 require_once __DIR__ . '/../bootstrap.php';
 
 /**
+ * This class is nothing more than a 'degenerate' class meant to test that the testing framework is up and running.
  * Class BeginnerTest
  * @package Oopphp
  */
