@@ -11,6 +11,7 @@ require_once __DIR__ . '/../bootstrap.php';
  */
 class BeginnerTest
 {
+
     /**
      * @return bool
      */
