@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/GenericClass.php</title>
+    <title>Code coverage report for src/OutOfScopeReference.php</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">src/</a> GenericClass.php
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> OutOfScopeReference.php
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>4/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,13 +35,13 @@
         <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">80% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>4/5</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -80,12 +80,39 @@
 35
 36
 37
-38</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+38
+39
+40
+41
+42</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -94,26 +121,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,37 +129,41 @@
 &nbsp;
 namespace Oopphp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >re</span>quire_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . "/../bootstrap.php";
 &nbsp;
 /**
- * Class GenericClass
+ * Class OutOfScopeReference
  * @package Oopphp
  */
-class GenericClass
+class OutOfScopeReference
 {
     /**
-     * @var int
+     * @var array
      */
-    private $intProperty = 0;
+    protected $items = [];
 &nbsp;
     /**
-     * @return int
+     * @param string $name
+     * @return mixed
      */
-    public function getIntProperty(): int
+    function &amp;__get(string $name)
     {
-        return $this-&gt;intProperty;
+        if (array_key_exists($name, $this-&gt;items)) {
+            $value =&amp; $this-&gt;items[$name]; // Note the reference operator
+        } else {
+<span class="cstat-no" title="statement not covered" >            $value = null; /</span>/ First assign null to a variable
+        }
+        return $value; // Then return a reference to the variable
     }
 &nbsp;
     /**
-     * @param int $intProperty
-     * @return GenericClass
+     * @param string $name
+     * @param mixed $value
      */
-    public function setIntProperty(int $intProperty): GenericClass
+    function __set(string $name, $value)
     {
-        $this-&gt;intProperty = $intProperty;
-        return $this;
+        $this-&gt;items[$name] = $value;
     }
-&nbsp;
 &nbsp;
 }
 &nbsp;</pre></td></tr>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/AddCalc.php</title>
+    <title>Code coverage report for src/SubtractCalc.php</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">src/</a> AddCalc.php
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> SubtractCalc.php
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>6/6</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>9/9</span>
       </div>
     </div>
   </div>
@@ -80,7 +80,48 @@
 35
 36
 37
-38</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -103,6 +144,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -112,8 +180,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,25 +202,36 @@
 namespace Oopphp;
 &nbsp;
 use Oopphp\Contracts\AddContract;
+use Oopphp\Contracts\SubtractContract;
 &nbsp;
 require_once __DIR__ . '/../bootstrap.php';
 &nbsp;
-&nbsp;
 /**
- * Class AddCalc
+ * Class SubtractCalc
  * @package Oopphp
  */
-class AddCalc implements AddContract
+class SubtractCalc implements SubtractContract
 {
     /**
-     * Note that array_sum will return the values as either an integer or a floating point number.
-     * However, we specify in the return type that we want an integer, so PHP will convert it.
+     * @var AddContract
+     */
+    private $addCalc;
+&nbsp;
+    /**
+     * SubtractCalc constructor.
+     * @param AddContract $addCalc
+     */
+    public function __construct(AddContract $addCalc)
+    {
+        $this-&gt;addCalc = $addCalc;
+    }
+    /**
      * @param int[] ...$args
      * @return int
      */
     public function addInt(...$args) : int
     {
-        return array_sum($args);
+        return $this-&gt;getAddCalc()-&gt;addInt(...$args);
     }
 &nbsp;
     /**
@@ -149,9 +240,38 @@ class AddCalc implements AddContract
      */
     public function addFloat(...$args) : float
     {
-        return array_sum($args);
+        return $this-&gt;getAddCalc()-&gt;addFloat(...$args);
     }
 &nbsp;
+    /**
+     * @return AddContract
+     */
+    public function getAddCalc(): AddContract
+    {
+        return $this-&gt;addCalc;
+    }
+&nbsp;
+    /**
+     * @param int[] ...$args
+     * @return int
+     */
+    public function subtractInt(...$args) : int
+    {
+        return array_reduce($args, $removeValues = function($previousValue, $currentValue) {
+            return $previousValue -= $currentValue;
+        }, 0);
+    }
+&nbsp;
+    /**
+     * @param float[] ...$args
+     * @return float
+     */
+    public function subtractFloat(...$args) : float
+    {
+        return array_reduce($args, $removeValues = function($previousValue, $currentValue) {
+            return $previousValue -= $currentValue;
+        }, 0);
+    }
 &nbsp;
 }
 &nbsp;</pre></td></tr>

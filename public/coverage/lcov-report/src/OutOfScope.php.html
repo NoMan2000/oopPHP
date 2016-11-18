@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/GenericClass.php</title>
+    <title>Code coverage report for src/OutOfScope.php</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">src/</a> GenericClass.php
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> OutOfScope.php
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -35,13 +35,13 @@
         <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>3/3</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -79,15 +79,11 @@
 34
 35
 36
-37
-38</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+37</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -102,7 +98,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -111,9 +111,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-yes">2×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -121,37 +119,36 @@
 &nbsp;
 namespace Oopphp;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >re</span>quire_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . "/../bootstrap.php";
 &nbsp;
 /**
- * Class GenericClass
+ * Class OutOfScope
  * @package Oopphp
  */
-class GenericClass
+class OutOfScope
 {
     /**
-     * @var int
+     * @var array
      */
-    private $intProperty = 0;
+    protected $items = [];
 &nbsp;
     /**
-     * @return int
+     * @param string $name
+     * @return mixed
      */
-    public function getIntProperty(): int
+    function __get(string $name)
     {
-        return $this-&gt;intProperty;
+        return isset($this-&gt;items[$name]) ? $this-&gt;items[$name] : null;
     }
 &nbsp;
     /**
-     * @param int $intProperty
-     * @return GenericClass
+     * @param string $name
+     * @param mixed $value
      */
-    public function setIntProperty(int $intProperty): GenericClass
+    function __set(string $name, $value)
     {
-        $this-&gt;intProperty = $intProperty;
-        return $this;
+        $this-&gt;items[$name] = $value;
     }
-&nbsp;
 &nbsp;
 }
 &nbsp;</pre></td></tr>
