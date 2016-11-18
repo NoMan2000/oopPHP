@@ -25,4 +25,13 @@ describe("It can create magical getters and setters", function () {
         $class->foo = 'Me';
         expect($bad)->toBe("Me");
     });
+
+    it("Can still retrieve null", function () use($getClass) {
+        /**
+         * @var $class OutOfScopeReference
+         */
+        $class = $getClass();
+        $x = $class->foo;
+        expect($x)->toBe(null);
+    });
 });
