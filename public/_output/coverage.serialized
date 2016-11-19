@@ -1,26 +1,6 @@
 <?php
 $coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
 $coverage->setData(array (
-  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/DynamicProperty.php' => 
-  array (
-    5 => 
-    array (
-      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
-    ),
-    19 => 
-    array (
-      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
-    ),
-    20 => 
-    array (
-      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
-    ),
-    26 => 
-    array (
-      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
-    ),
-    27 => NULL,
-  ),
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Exceptions/ErrorExceptionHandler.php' => 
   array (
     19 => 
@@ -44,6 +24,107 @@ $coverage->setData(array (
       0 => 'ChapterSeven\\ExceptionsTest::testCanTriggerAnErrorAndException',
     ),
     38 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterEight/Auth.php' => 
+  array (
+    12 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+    ),
+    29 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+      1 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+      2 => 'ChapterEight\\AuthTest::testCanSetFileLocation',
+    ),
+    30 => NULL,
+    38 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanSetFileLocation',
+    ),
+    39 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanSetFileLocation',
+    ),
+    40 => NULL,
+    51 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+      1 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+      2 => 'ChapterEight\\AuthTest::testCanSetFileLocation',
+    ),
+    52 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+      1 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+      2 => 'ChapterEight\\AuthTest::testCanSetFileLocation',
+    ),
+    53 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+      1 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+      2 => 'ChapterEight\\AuthTest::testCanSetFileLocation',
+    ),
+    60 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+    ),
+    61 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+    ),
+    63 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+    ),
+    64 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+    ),
+    67 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnFailedLogin',
+    ),
+    74 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+    ),
+    75 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+    ),
+    77 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+    ),
+    78 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+    ),
+    81 => 
+    array (
+      0 => 'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/DynamicProperty.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    19 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    20 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    26 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    27 => NULL,
   ),
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/OutOfScopeReference.php' => 
   array (
@@ -474,6 +555,7 @@ $coverage->setData(array (
     86 => NULL,
     93 => 
     array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
     ),
     94 => NULL,
     101 => 
@@ -729,6 +811,21 @@ $coverage->setData(array (
   ),
 ));
 $coverage->setTests(array (
+  'ChapterEight\\AuthTest::testCanLogOnSuccessfulLogin' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterEight\\AuthTest::testCanLogOnFailedLogin' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterEight\\AuthTest::testCanSetFileLocation' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
   'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty' => 
   array (
     'size' => 'unknown',
@@ -863,6 +960,7 @@ $coverage->setTests(array (
 
 $filter = $coverage->filter();
 $filter->setWhitelistedFiles(array (
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterEight/Auth.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/DynamicProperty.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/OutOfScope.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/OutOfScopeReference.php' => true,

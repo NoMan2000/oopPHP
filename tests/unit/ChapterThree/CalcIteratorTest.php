@@ -39,6 +39,8 @@ class CalcIteratorTest extends \Codeception\Test\Unit
 
         $this->specify("Can perform a foreach loop with Keys and values", function () {
             $itemList = $this->calcIterator->getItemList();
+            $count = $this->calcIterator->count();
+            verify(count($itemList))->equals($count);
             foreach ($this->calcIterator as $key => $value) {
                 verify($value)->equals($itemList[$key]);
             }

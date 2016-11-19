@@ -6,6 +6,7 @@ coverage:
     exclude:
       - Oopphp/src/*.md
       - Oopphp/src/MagicClass.php
+      - Oopphp/src/Traits/*
 paths:
     tests: tests
     log: public/_output

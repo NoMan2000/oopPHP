@@ -2,7 +2,7 @@
 <html lang="en">
  <head>
   <meta charset="UTF-8">
-  <title>Dashboard for /Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFour</title>
+  <title>Dashboard for /Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterEight</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../css/bootstrap.min.css" rel="stylesheet">
   <link href="../css/nv.d3.min.css" rel="stylesheet">
@@ -19,7 +19,7 @@
      <div class="col-md-12">
       <ol class="breadcrumb">
         <li><a href="../index.html">/Users/michaelsoileau/Sites/oopPHP/Oopphp/src</a></li>
-        <li><a href="index.html">ChapterFour</a></li>
+        <li><a href="index.html">ChapterEight</a></li>
         <li class="active">(Dashboard)</li>
 
       </ol>
@@ -158,7 +158,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#classCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,2], "Class Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,1], "Class Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -176,7 +176,7 @@ $(document).ready(function() {
       .yAxis.tickFormat(d3.format('d'));
 
     d3.select('#methodCoverageDistribution svg')
-      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,7], "Method Coverage"))
+      .datum(getCoverageDistributionData([0,0,0,0,0,0,0,0,0,0,0,5], "Method Coverage"))
       .transition().duration(500).call(chart);
 
     nv.utils.windowResize(chart.update);
@@ -226,7 +226,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,6,"<a href=\"AbstractClass.php.html#11\">AbstractClass<\/a>"],[100,1,"<a href=\"ChildAbstractClass.php.html#11\">ChildAbstractClass<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,6,"<a href=\"Auth.php.html#18\">Auth<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);
@@ -250,7 +250,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Method Complexity');
 
     d3.select('#methodComplexity svg')
-      .datum(getComplexityData([[100,1,"<a href=\"AbstractClass.php.html#26\">AbstractClass::getMyVariable<\/a>"],[100,1,"<a href=\"AbstractClass.php.html#35\">AbstractClass::setMyVariable<\/a>"],[100,1,"<a href=\"AbstractClass.php.html#44\">AbstractClass::getHiddenVariable<\/a>"],[100,1,"<a href=\"AbstractClass.php.html#53\">AbstractClass::setHiddenVariable<\/a>"],[100,1,"<a href=\"AbstractClass.php.html#62\">AbstractClass::getData<\/a>"],[100,1,"<a href=\"AbstractClass.php.html#67\">AbstractClass::getFinalFunction<\/a>"],[100,1,"<a href=\"ChildAbstractClass.php.html#19\">ChildAbstractClass::getData<\/a>"]], 'Method Complexity'))
+      .datum(getComplexityData([[100,1,"<a href=\"Auth.php.html#27\">Auth::getFileLocation<\/a>"],[100,1,"<a href=\"Auth.php.html#36\">Auth::setFileLocation<\/a>"],[100,2,"<a href=\"Auth.php.html#46\">Auth::__construct<\/a>"],[100,1,"<a href=\"Auth.php.html#58\">Auth::failAuth<\/a>"],[100,1,"<a href=\"Auth.php.html#72\">Auth::successAuth<\/a>"]], 'Method Complexity'))
       .transition()
       .duration(500)
       .call(chart);
