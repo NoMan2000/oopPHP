@@ -1,13 +1,13 @@
 <?php
 
-namespace Oopphp;
+namespace Oopphp\ChapterOne;
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * This class is nothing more than a 'degenerate' class meant to test that the testing framework is up and running.
  * Class BeginnerTest
- * @package Oopphp
+ * @package Oopphp\ChapterOne
  */
 class BeginnerTest
 {

@@ -4,6 +4,10 @@ require_once __DIR__ . '/bootstrap.php';
 
 use Oopphp\MagicClass;
 
+/**
+ * This is something that we could test out, but it's currently non-testable.
+ */
+
 $l = PHP_EOL;
 
 echo MagicClass::getUnknown() . $l; // Invoking the __callStatic method

@@ -1,8 +1,8 @@
 <?php
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
-use Oopphp\BeginnerTest;
+use Oopphp\ChapterOne\BeginnerTest;
 
 describe("This is a basic test", function () {
 

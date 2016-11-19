@@ -6,3 +6,5 @@ node_modules/
 .vagrant/
 Homestead.yaml
 composer.lock
+
+tests/_output/*

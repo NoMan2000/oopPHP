@@ -1,8 +1,8 @@
 <?php
 
-use Oopphp\AddCalc;
+use Oopphp\ChapterThree\AddCalc;
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 describe("Can implement a Contract", function () {
 

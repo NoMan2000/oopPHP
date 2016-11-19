@@ -1,11 +1,11 @@
 <?php
 
-namespace Oopphp;
+namespace Oopphp\ChapterThree;
 
 use Oopphp\Contracts\AddContract;
 use Oopphp\Contracts\SubtractContract;
 
-require_once __DIR__ . '/../bootstrap.php';
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * Class SubtractCalc
