@@ -1,0 +1,602 @@
+<?php
+$coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
+$coverage->setData(array (
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/DynamicProperty.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    19 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    20 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    26 => 
+    array (
+      0 => 'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty',
+    ),
+    27 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Exceptions/ErrorExceptionHandler.php' => 
+  array (
+    19 => 
+    array (
+      0 => 'ChapterSeven\\ExceptionsTest::testCanTriggerAnErrorAndException',
+    ),
+    20 => 
+    array (
+      0 => 'ChapterSeven\\ExceptionsTest::testCanTriggerAnErrorAndException',
+    ),
+    34 => 
+    array (
+      0 => 'ChapterSeven\\ExceptionsTest::testCanTriggerAnErrorAndException',
+    ),
+    35 => 
+    array (
+      0 => 'ChapterSeven\\ExceptionsTest::testCanTriggerAnErrorAndException',
+    ),
+    37 => 
+    array (
+      0 => 'ChapterSeven\\ExceptionsTest::testCanTriggerAnErrorAndException',
+    ),
+    38 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/OutOfScopeReference.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference',
+    ),
+    24 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference',
+    ),
+    25 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference',
+    ),
+    27 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference',
+    ),
+    29 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference',
+    ),
+    30 => NULL,
+    38 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference',
+    ),
+    39 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/OutOfScope.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeTest::testCanCreateMagicGettersAndSetters',
+    ),
+    24 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeTest::testCanCreateMagicGettersAndSetters',
+    ),
+    25 => NULL,
+    33 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeTest::testCanCreateMagicGettersAndSetters',
+    ),
+    34 => 
+    array (
+      0 => 'ChapterFive\\OutOfScopeTest::testCanCreateMagicGettersAndSetters',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFour/ChildAbstractClass.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    22 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    23 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    25 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFour/AbstractClass.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    28 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    29 => NULL,
+    37 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    38 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    39 => NULL,
+    46 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    47 => NULL,
+    55 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    56 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    57 => NULL,
+    69 => 
+    array (
+      0 => 'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass',
+    ),
+    70 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterOne/Beginner.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterOne\\BeginnerTest::testCanRunDegenerateTests',
+    ),
+    20 => 
+    array (
+      0 => 'ChapterOne\\BeginnerTest::testCanRunDegenerateTests',
+    ),
+    21 => NULL,
+    28 => 
+    array (
+      0 => 'ChapterOne\\BeginnerTest::testCanRunDegenerateTests',
+    ),
+    29 => NULL,
+    37 => 
+    array (
+      0 => 'ChapterOne\\BeginnerTest::testCanRunDegenerateTests',
+    ),
+    38 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterSix/MagicMethodsClass.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+    ),
+    49 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+      2 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      3 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+      4 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+      5 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+      6 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+      7 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+      8 => 'ChapterSix\\MagicMethodsClassTest::testSetState',
+    ),
+    50 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+      2 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      3 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+      4 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+      5 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+      6 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+      7 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+      8 => 'ChapterSix\\MagicMethodsClassTest::testSetState',
+    ),
+    58 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+      2 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      3 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+      4 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+      5 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+      6 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+      7 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+      8 => 'ChapterSix\\MagicMethodsClassTest::testSetState',
+    ),
+    59 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+      2 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      3 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+      4 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+      5 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+      6 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+      7 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+      8 => 'ChapterSix\\MagicMethodsClassTest::testSetState',
+    ),
+    69 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+    ),
+    70 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+    ),
+    72 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+    ),
+    73 => NULL,
+    188 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+      2 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      3 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+      4 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+      5 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+      6 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+      7 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+      8 => 'ChapterSix\\MagicMethodsClassTest::testSetState',
+    ),
+    189 => NULL,
+    212 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+      2 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      3 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+      4 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+      5 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+      6 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+      7 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+      8 => 'ChapterSix\\MagicMethodsClassTest::testSetState',
+    ),
+    216 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument',
+      2 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      3 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+      4 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+      5 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+      6 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+      7 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+      8 => 'ChapterSix\\MagicMethodsClassTest::testSetState',
+    ),
+    217 => NULL,
+    93 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet',
+      1 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+    ),
+    83 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+    ),
+    196 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject',
+    ),
+    103 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+    ),
+    104 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+    ),
+    112 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+    ),
+    121 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+    ),
+    122 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset',
+    ),
+    132 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+    ),
+    142 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+    ),
+    143 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+    ),
+    204 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+    ),
+    224 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+    ),
+    228 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject',
+    ),
+    150 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod',
+    ),
+    158 => 
+    array (
+      0 => 'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterSix/ToString.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterSix\\ToStringTest::testCanCastObjectToAStringRepresentation',
+    ),
+    18 => 
+    array (
+      0 => 'ChapterSix\\ToStringTest::testCanCastObjectToAStringRepresentation',
+    ),
+    19 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/AddContract.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalc.php' => 
+  array (
+    7 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+    ),
+    24 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    25 => NULL,
+    33 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    34 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantOne.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\ClassConstantsTest::testCanOverrideAClassConstant',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantTwo.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\ClassConstantsTest::testCanOverrideAClassConstant',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/SubtractContract.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/SubtractCalc.php' => 
+  array (
+    8 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    27 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    28 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    35 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    36 => NULL,
+    44 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    45 => NULL,
+    52 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    53 => NULL,
+    62 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    63 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    64 => NULL,
+    73 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    74 => 
+    array (
+      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    75 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterTwo/GenericClass.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterTwo\\GenericClassTest::testCanGetAndSetValuesAndReturnFluentModel',
+    ),
+    24 => 
+    array (
+      0 => 'ChapterTwo\\GenericClassTest::testCanGetAndSetValuesAndReturnFluentModel',
+    ),
+    25 => NULL,
+    33 => 
+    array (
+      0 => 'ChapterTwo\\GenericClassTest::testCanGetAndSetValuesAndReturnFluentModel',
+    ),
+    34 => 
+    array (
+      0 => 'ChapterTwo\\GenericClassTest::testCanGetAndSetValuesAndReturnFluentModel',
+    ),
+    35 => NULL,
+  ),
+));
+$coverage->setTests(array (
+  'ChapterFive\\DynamicPropertyTest::testCanGetADynamicProperty' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterFive\\OutOfScopeReferenceTest::testCanSetAndRetrieveValuesByReference' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterFive\\OutOfScopeTest::testCanCreateMagicGettersAndSetters' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterFour\\ChildAbstractClassTest::testCanImplementAndExtendTheParentClass' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterOne\\BeginnerTest::testCanRunDegenerateTests' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSeven\\ExceptionsTest::testCanTriggerAnErrorAndException' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanInvokeAMethodUsingCall' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanThrowAnExceptionOnInvalidCallArgument | Will throw an exception on an invalid argument' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanAccessAPropertyUsingGet' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanMakeAStaticCallToObject' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanSetANonExistentPropertyAndCheckifIsset' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanSerializeAndDeserializeAnObject' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanCallToStringMethod' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testCanInvokeTheObject' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\MagicMethodsClassTest::testSetState' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterSix\\ToStringTest::testCanCastObjectToAStringRepresentation' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\ClassConstantsTest::testCanOverrideAClassConstant' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterTwo\\GenericClassTest::testCanGetAndSetValuesAndReturnFluentModel' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+));
+
+$filter = $coverage->filter();
+$filter->setWhitelistedFiles(array (
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/DynamicProperty.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/OutOfScope.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/OutOfScopeReference.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFour/AbstractClass.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFour/ChildAbstractClass.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterOne/Beginner.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterSix/MagicMethodsClass.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterSix/ToString.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalc.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantOne.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantTwo.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/SubtractCalc.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterTwo/GenericClass.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/AddContract.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/SubtractContract.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Exceptions/ErrorExceptionHandler.php' => true,
+));
+
+return $coverage;
