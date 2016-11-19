@@ -58,7 +58,7 @@ class SubtractCalc implements SubtractContract
      */
     public function subtractInt(...$args) : int
     {
-        return array_reduce($args, $removeValues = function($previousValue, $currentValue) {
+        return array_reduce($args, $removeValues = function(int $previousValue, int $currentValue) {
             return $previousValue -= $currentValue;
         }, 0);
     }
@@ -69,7 +69,7 @@ class SubtractCalc implements SubtractContract
      */
     public function subtractFloat(...$args) : float
     {
-        return array_reduce($args, $removeValues = function($previousValue, $currentValue) {
+        return array_reduce($args, $removeValues = function(float $previousValue, float $currentValue) {
             return $previousValue -= $currentValue;
         }, 0);
     }

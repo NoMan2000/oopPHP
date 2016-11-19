@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1479577849">
-  <project timestamp="1479577849">
+<coverage generated="1479583743">
+  <project timestamp="1479583743">
     <package name="Oopphp\ChapterFive">
       <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/DynamicProperty.php">
         <class name="DynamicProperty" namespace="Oopphp\ChapterFive" fullPackage="Oopphp" package="Oopphp">
@@ -161,6 +161,19 @@
         <line num="33" type="stmt" count="2"/>
         <metrics loc="37" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </file>
+      <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalcDiff.php">
+        <class name="AddCalcDiff" namespace="Oopphp\ChapterThree" fullPackage="Oopphp" package="Oopphp">
+          <metrics complexity="3" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="4" elements="6" coveredelements="6"/>
+        </class>
+        <line num="5" type="stmt" count="1"/>
+        <line num="19" type="method" name="addInt" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="22" type="stmt" count="2"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="32" type="method" name="anonymous function" complexity="1" crap="1" count="2"/>
+        <line num="33" type="stmt" count="2"/>
+        <line num="34" type="stmt" count="2"/>
+        <metrics loc="37" ncloc="25" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </file>
       <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantOne.php">
         <class name="ClassConstantOne" namespace="Oopphp\ChapterThree" fullPackage="Oopphp" package="Oopphp">
           <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
@@ -235,6 +248,6 @@
         <metrics loc="39" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
       </file>
     </package>
-    <metrics files="16" loc="767" ncloc="444" classes="14" methods="45" coveredmethods="45" conditionals="0" coveredconditionals="0" statements="85" coveredstatements="85" elements="130" coveredelements="130"/>
+    <metrics files="17" loc="804" ncloc="469" classes="15" methods="47" coveredmethods="47" conditionals="0" coveredconditionals="0" statements="90" coveredstatements="90" elements="137" coveredelements="137"/>
   </project>
 </coverage>

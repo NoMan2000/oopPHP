@@ -359,6 +359,35 @@ $coverage->setData(array (
     ),
     19 => NULL,
   ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalcDiff.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+    ),
+    22 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    23 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    24 => NULL,
+    33 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    34 => 
+    array (
+      0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    35 => NULL,
+  ),
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/AddContract.php' => 
   array (
     5 => 
@@ -590,6 +619,7 @@ $filter->setWhitelistedFiles(array (
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterSix/MagicMethodsClass.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterSix/ToString.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalc.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalcDiff.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantOne.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantTwo.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/SubtractCalc.php' => true,
