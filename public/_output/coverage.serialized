@@ -404,15 +404,293 @@ $coverage->setData(array (
     24 => 
     array (
       0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
-      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+      1 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      2 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      3 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
     ),
     25 => NULL,
     33 => 
     array (
       0 => 'ChapterThree\\AddCalcTest::testCanImplementAContractAndReturnCorrectType',
-      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      2 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
     ),
     34 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/IteratorContract.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/CalcIterator.php' => 
+  array (
+    8 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    34 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    35 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    36 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    45 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    46 => NULL,
+    53 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    54 => NULL,
+    61 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    62 => NULL,
+    69 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    70 => NULL,
+    77 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    78 => NULL,
+    85 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    86 => NULL,
+    93 => 
+    array (
+    ),
+    94 => NULL,
+    101 => 
+    array (
+    ),
+    102 => NULL,
+    110 => 
+    array (
+    ),
+    111 => 
+    array (
+    ),
+    112 => NULL,
+    119 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    120 => NULL,
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/OperationContract.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/SubtractContract.php' => 
+  array (
+    5 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/SubtractCalc.php' => 
+  array (
+    8 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    27 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      2 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      3 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+      4 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+      5 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+      6 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    28 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      2 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      3 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+      4 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+      5 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+      6 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    35 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      2 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    36 => NULL,
+    44 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    45 => NULL,
+    52 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      2 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    53 => NULL,
+    63 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    64 => NULL,
+    74 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    75 => NULL,
+    62 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+    73 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      1 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
+    ),
+  ),
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/Calculator.php' => 
+  array (
+    9 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+    ),
+    28 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      2 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      3 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+      4 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+      5 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    29 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      2 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      3 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+      4 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+      5 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    40 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      2 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      3 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+      4 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+      5 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    41 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      1 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    43 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      2 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+      3 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+    ),
+    44 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      2 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+    ),
+    46 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+    ),
+    47 => NULL,
+    57 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      1 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    58 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+    ),
+    60 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+      1 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    61 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformSubtractions',
+    ),
+    63 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    64 => NULL,
+    74 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      2 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+    ),
+    75 => 
+    array (
+      0 => 'ChapterThree\\CalcIteratorTest::testCanImplementTheContract',
+      1 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+    ),
+    77 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+      1 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+    ),
+    78 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanPerformAdditions',
+    ),
+    80 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+    ),
+    81 => NULL,
+    89 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known',
+      1 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known',
+    ),
+    90 => NULL,
+    98 => 
+    array (
+      0 => 'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known',
+    ),
+    99 => NULL,
   ),
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantOne.php' => 
   array (
@@ -427,61 +705,6 @@ $coverage->setData(array (
     array (
       0 => 'ChapterThree\\ClassConstantsTest::testCanOverrideAClassConstant',
     ),
-  ),
-  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/SubtractContract.php' => 
-  array (
-    5 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-  ),
-  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/SubtractCalc.php' => 
-  array (
-    8 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    27 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    28 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    35 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    36 => NULL,
-    44 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    45 => NULL,
-    52 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    53 => NULL,
-    62 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    63 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    64 => NULL,
-    73 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    74 => 
-    array (
-      0 => 'ChapterThree\\SubtractCalcTest::testCanDelegateTasksToAnotherObjectAndImplementAnInterface',
-    ),
-    75 => NULL,
   ),
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterTwo/GenericClass.php' => 
   array (
@@ -591,6 +814,36 @@ $coverage->setTests(array (
     'size' => 'unknown',
     'status' => 0,
   ),
+  'ChapterThree\\CalcIteratorTest::testCanImplementTheContract' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\CalculatorTest::testCanPerformSubtractions' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\CalculatorTest::testCanPerformAdditions' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadOperation | Will throw an Exception if the operation asked is not known' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition | Will throw an Exception if the operation asked is not known' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
+  'ChapterThree\\CalculatorTest::testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction | Will throw an Exception if the operation asked is not known' => 
+  array (
+    'size' => 'unknown',
+    'status' => 0,
+  ),
   'ChapterThree\\ClassConstantsTest::testCanOverrideAClassConstant' => 
   array (
     'size' => 'unknown',
@@ -620,11 +873,15 @@ $filter->setWhitelistedFiles(array (
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterSix/ToString.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalc.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalcDiff.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/CalcIterator.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/Calculator.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantOne.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantTwo.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/SubtractCalc.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterTwo/GenericClass.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/AddContract.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/IteratorContract.php' => true,
+  '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/OperationContract.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/SubtractContract.php' => true,
   '/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Exceptions/ErrorExceptionHandler.php' => true,
 ));

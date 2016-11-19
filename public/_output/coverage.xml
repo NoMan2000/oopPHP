@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1479583743">
-  <project timestamp="1479583743">
+<coverage generated="1479592076">
+  <project timestamp="1479592076">
     <package name="Oopphp\ChapterFive">
       <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterFive/DynamicProperty.php">
         <class name="DynamicProperty" namespace="Oopphp\ChapterFive" fullPackage="Oopphp" package="Oopphp">
@@ -155,10 +155,10 @@
           <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="4" coveredelements="4"/>
         </class>
         <line num="7" type="stmt" count="1"/>
-        <line num="22" type="method" name="addInt" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="24" type="stmt" count="2"/>
-        <line num="31" type="method" name="addFloat" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="33" type="stmt" count="2"/>
+        <line num="22" type="method" name="addInt" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="24" type="stmt" count="4"/>
+        <line num="31" type="method" name="addFloat" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="33" type="stmt" count="3"/>
         <metrics loc="37" ncloc="23" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="5" coveredelements="5"/>
       </file>
       <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/AddCalcDiff.php">
@@ -173,6 +173,70 @@
         <line num="33" type="stmt" count="2"/>
         <line num="34" type="stmt" count="2"/>
         <metrics loc="37" ncloc="25" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
+      </file>
+      <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/CalcIterator.php">
+        <class name="CalcIterator" namespace="Oopphp\ChapterThree" fullPackage="Oopphp" package="Oopphp">
+          <metrics complexity="12" methods="11" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="10" elements="25" coveredelements="18"/>
+        </class>
+        <line num="8" type="stmt" count="1"/>
+        <line num="32" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="34" type="stmt" count="1"/>
+        <line num="35" type="stmt" count="1"/>
+        <line num="36" type="stmt" count="1"/>
+        <line num="43" type="method" name="calc" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="45" type="stmt" count="1"/>
+        <line num="51" type="method" name="current" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="53" type="stmt" count="1"/>
+        <line num="59" type="method" name="next" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="67" type="method" name="key" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="69" type="stmt" count="1"/>
+        <line num="75" type="method" name="valid" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="77" type="stmt" count="1"/>
+        <line num="83" type="method" name="rewind" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="85" type="stmt" count="1"/>
+        <line num="91" type="method" name="count" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="93" type="stmt" count="0"/>
+        <line num="99" type="method" name="getOperationClass" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="101" type="stmt" count="0"/>
+        <line num="108" type="method" name="setOperationClass" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="110" type="stmt" count="0"/>
+        <line num="111" type="stmt" count="0"/>
+        <line num="117" type="method" name="getItemList" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="119" type="stmt" count="1"/>
+        <metrics loc="121" ncloc="73" classes="1" methods="11" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="11" elements="26" coveredelements="19"/>
+      </file>
+      <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/Calculator.php">
+        <class name="Calculator" namespace="Oopphp\ChapterThree" fullPackage="Oopphp" package="Oopphp">
+          <metrics complexity="12" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="25" coveredelements="25"/>
+        </class>
+        <line num="9" type="stmt" count="1"/>
+        <line num="26" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="28" type="stmt" count="6"/>
+        <line num="29" type="stmt" count="6"/>
+        <line num="38" type="method" name="calc" visibility="public" complexity="3" crap="3" count="6"/>
+        <line num="40" type="stmt" count="6"/>
+        <line num="41" type="stmt" count="2"/>
+        <line num="43" type="stmt" count="4"/>
+        <line num="44" type="stmt" count="3"/>
+        <line num="46" type="stmt" count="1"/>
+        <line num="55" type="method" name="subtractOperation" visibility="protected" complexity="3" crap="3" count="2"/>
+        <line num="57" type="stmt" count="2"/>
+        <line num="58" type="stmt" count="1"/>
+        <line num="60" type="stmt" count="2"/>
+        <line num="61" type="stmt" count="1"/>
+        <line num="63" type="stmt" count="1"/>
+        <line num="72" type="method" name="addOperation" visibility="protected" complexity="3" crap="3" count="3"/>
+        <line num="74" type="stmt" count="3"/>
+        <line num="75" type="stmt" count="2"/>
+        <line num="77" type="stmt" count="2"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="80" type="stmt" count="1"/>
+        <line num="87" type="method" name="badReturnType" visibility="protected" complexity="1" crap="1" count="2"/>
+        <line num="89" type="stmt" count="2"/>
+        <line num="96" type="method" name="badOperation" visibility="protected" complexity="1" crap="1" count="1"/>
+        <line num="98" type="stmt" count="1"/>
+        <metrics loc="101" ncloc="63" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="20" coveredstatements="20" elements="26" coveredelements="26"/>
       </file>
       <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/ChapterThree/ClassConstantOne.php">
         <class name="ClassConstantOne" namespace="Oopphp\ChapterThree" fullPackage="Oopphp" package="Oopphp">
@@ -193,21 +257,21 @@
           <metrics complexity="7" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="15" coveredelements="15"/>
         </class>
         <line num="8" type="stmt" count="1"/>
-        <line num="25" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="27" type="stmt" count="1"/>
-        <line num="28" type="stmt" count="1"/>
-        <line num="33" type="method" name="addInt" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="35" type="stmt" count="1"/>
-        <line num="42" type="method" name="addFloat" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="44" type="stmt" count="1"/>
-        <line num="50" type="method" name="getAddCalc" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="52" type="stmt" count="1"/>
-        <line num="59" type="method" name="subtractInt" visibility="public" complexity="1" crap="1" count="1"/>
-        <line num="62" type="stmt" count="1"/>
-        <line num="63" type="stmt" count="1"/>
-        <line num="72" type="method" name="anonymous function" complexity="1" crap="1" count="1"/>
-        <line num="73" type="stmt" count="1"/>
-        <line num="74" type="stmt" count="1"/>
+        <line num="25" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="27" type="stmt" count="7"/>
+        <line num="28" type="stmt" count="7"/>
+        <line num="33" type="method" name="addInt" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="35" type="stmt" count="3"/>
+        <line num="42" type="method" name="addFloat" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="44" type="stmt" count="2"/>
+        <line num="50" type="method" name="getAddCalc" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="52" type="stmt" count="3"/>
+        <line num="59" type="method" name="subtractInt" visibility="public" complexity="1" crap="1" count="2"/>
+        <line num="62" type="stmt" count="2"/>
+        <line num="63" type="stmt" count="2"/>
+        <line num="72" type="method" name="anonymous function" complexity="1" crap="1" count="2"/>
+        <line num="73" type="stmt" count="2"/>
+        <line num="74" type="stmt" count="2"/>
         <metrics loc="77" ncloc="47" classes="1" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="16" coveredelements="16"/>
       </file>
     </package>
@@ -229,6 +293,14 @@
       <line num="5" type="stmt" count="1"/>
       <metrics loc="24" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
     </file>
+    <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/IteratorContract.php">
+      <line num="5" type="stmt" count="1"/>
+      <metrics loc="14" ncloc="10" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
+    </file>
+    <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/OperationContract.php">
+      <line num="5" type="stmt" count="1"/>
+      <metrics loc="46" ncloc="20" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
+    </file>
     <file name="/Users/michaelsoileau/Sites/oopPHP/Oopphp/src/Contracts/SubtractContract.php">
       <line num="5" type="stmt" count="1"/>
       <metrics loc="24" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="1" coveredelements="1"/>
@@ -248,6 +320,6 @@
         <metrics loc="39" ncloc="21" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="5" elements="7" coveredelements="7"/>
       </file>
     </package>
-    <metrics files="17" loc="804" ncloc="469" classes="15" methods="47" coveredmethods="47" conditionals="0" coveredconditionals="0" statements="90" coveredstatements="90" elements="137" coveredelements="137"/>
+    <metrics files="21" loc="1086" ncloc="635" classes="17" methods="64" coveredmethods="61" conditionals="0" coveredconditionals="0" statements="127" coveredstatements="123" elements="191" coveredelements="184"/>
   </project>
 </coverage>
