@@ -18,7 +18,8 @@ class FibonacciGenerator
     {
         $current = 1;
         $previous = 0;
-        for ($i = 0; $i < $until; $i += 1) {
+        yield 0 => 1;
+        for ($i = 1; $i <= $until; $i += 1) {
             yield $i => $current;
             $temp = $current;
             $current = $previous + $current;

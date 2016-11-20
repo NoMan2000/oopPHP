@@ -31,7 +31,8 @@ class UserClassGeneratorTest extends \Codeception\Test\Unit
     public function testCanImplementAContract()
     {
         $this->specify("An anonymous class can implement the correct contract", function () {
-
+            verify($this->userGenerator->getClass()->getID())->equals(100);
+            verify($this->userGenerator->getClass()->getUsername())->equals('john');
         });
     }
 }

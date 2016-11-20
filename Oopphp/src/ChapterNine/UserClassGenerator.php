@@ -13,6 +13,15 @@ require_once __DIR__ . '/../../../public/bootstrap.php';
 class UserClassGenerator extends AbstractAnonClassFactory
 {
     /**
+     * An example of keeping the parent generic but implementing more details in the child
+     * @return UserContract
+     */
+    public function getClass() : UserContract
+    {
+        return parent::getClass();
+    }
+
+    /**
      * @return mixed
      */
     protected function createAnonymousClass()
