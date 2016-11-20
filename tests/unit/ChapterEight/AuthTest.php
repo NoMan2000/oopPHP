@@ -3,7 +3,7 @@ namespace ChapterEight;
 
 use Codeception\Specify;
 use Oopphp\ChapterEight\Auth;
-
+use AspectMock\Test;
 /**
  * Class AuthTest
  * @package ChapterEight
@@ -32,6 +32,12 @@ class AuthTest extends \Codeception\Test\Unit
         if (!$logFileExists) {
             touch($logFile);
         }
+    }
+
+    public function _after()
+    {
+        parent::_after();
+        Test::clean();
     }
 
     /**

@@ -1,10 +1,14 @@
 /vendor/
-.c9/
-bower_components/
 .idea/
 node_modules/
 .vagrant/
 Homestead.yaml
 composer.lock
+cache/*
+public/_output/*
+logs/*
 
-tests/_output/*
+# Keep the following files regardless of where they are
+
+!.keep
+!*.md
