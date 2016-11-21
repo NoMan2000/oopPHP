@@ -12,7 +12,6 @@
         "psy/psysh": "^0.7.2",
         "codeception/mockery-module": "^0.2.2",
         "codeception/codeception": "^2.2",
-        "codeception/aspect-mock": "^2.0",
         "codeception/specify": "^0.4.5",
         "codeception/verify": "^0.3.2"
     },
