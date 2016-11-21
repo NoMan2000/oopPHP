@@ -18,7 +18,7 @@ class BeginnerTest extends \Codeception\Test\Unit
     protected $class;
 
     /**
-     *
+      @before
      */
     protected function _before()
     {

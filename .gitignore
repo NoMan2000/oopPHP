@@ -7,7 +7,7 @@ composer.lock
 cache/*
 public/_output/*
 logs/*
-
+public/deps/
 # Keep the following files regardless of where they are
 
 !.keep

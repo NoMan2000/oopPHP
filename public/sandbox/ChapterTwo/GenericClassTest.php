@@ -1,44 +1,40 @@
 <?php
-namespace ChapterTwo;
+
+require_once __DIR__ . '/../../bootstrap.php';
 
 use Oopphp\ChapterTwo\GenericClass;
 
 /**
- * Class GenericClassTest
- * @package ChapterTwo
+ * @return GenericClass
  */
-class GenericClassTest extends \Codeception\Test\Unit
-{
-    use \Codeception\Specify;
-    /**
-     * @var GenericClass
-     */
-    protected $class;
+$before =  function() {
+    return new GenericClass();
+};
 
-    /**
-     *
-     */
-    protected function _before()
-    {
-        $this->class = new GenericClass();
-    }
+callBackAssertion(
+    "Should have a default int value of 0",
+    $before()->getIntProperty() === 0,
+    '$before()->getIntProperty()');
 
-    /**
-     *
-     */
-    public function testCanGetAndSetValuesAndReturnFluentModel()
-    {
-        $this->specify("Should have a default int value of 0", function () {
-            verify($this->class->getIntProperty())->equals(0);
-        });
+callBackAssertion(
+    "Should return the class back as a fluent method",
+    $before()->setIntProperty(10) instanceof GenericClass,
+    '$before()->setIntProperty(10) instanceof GenericClass'
+);
 
-        $this->specify("Should return the class back as a fluent method", function () {
-            verify($this->class->setIntProperty(10))->isInstanceOf(GenericClass::class);
-        });
+callBackAssertion(
+    "Should be able to set and retrieve an integer value",
+    (function (callable $before) {
+        /**
+         * @var $class GenericClass
+         */
+        $class = $before();
+        $class->setIntProperty(14);
+        return $class->getIntProperty();
+    })($before) === 14,
+    '(function(callable $before) {
+        $before()->setIntProperty(14);
+        return $before()->getIntProperty();
+    })($before) === 14'
+);
 
-        $this->specify("Should be able to set and retrieve an integer value", function () {
-            $this->class->setIntProperty(14);
-            verify($this->class->getIntProperty())->equals(14);
-        });
-    }
-}

@@ -1,8 +1,7 @@
 <?php
 
-namespace ChapterThree;
+require_once __DIR__ . '/../../bootstrap.php';
 
-use Codeception\Specify;
 use Oopphp\ChapterThree\AddCalc;
 use Oopphp\ChapterThree\AddCalcDiff;
 

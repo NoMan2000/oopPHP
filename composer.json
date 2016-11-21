@@ -31,7 +31,7 @@
         }
     ],
     "scripts": {
-        "test": "./vendor/bin/codecept run unit --coverage --coverage-xml --coverage-html --verbose;"
+        "test": "./vendor/bin/codecept run unit --coverage --coverage-xml --coverage-html --verbose"
     },
     "minimum-stability": "alpha",
     "config": {
