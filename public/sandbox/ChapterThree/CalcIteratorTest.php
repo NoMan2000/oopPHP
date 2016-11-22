@@ -1,49 +1,45 @@
 <?php
-namespace ChapterThree;
 
-
-use Codeception\Specify;
 use Oopphp\ChapterThree\CalcIterator;
 use Oopphp\Contracts\OperationContract;
 
+require_once __DIR__ . '/../../bootstrap.php';
+
 /**
- * Class CalcIteratorTest
- * @package ChapterThree
+ * @return CalcIterator
  */
-class CalcIteratorTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function () {
+    $numbers = [1, 2, 3, 4];
+    return new CalcIterator($numbers);
+};
 
-    /**
-     * @var CalcIterator
-     */
-    protected $calcIterator;
 
+specify($spec = "Can perform an operation", $exec = function () use ($before, $spec) {
+    printAssertion(verifyExt(
+        $spec . ' for the evaluated statement: <code>$before()->calcIterator->calc("+", OperationContract::INT)</code>',
+        $before()->calc('+', OperationContract::INT)
+    )->equals(10));
+});
+
+specify($statement = "Can perform a foreach loop with Keys and values", $exec = function () use ($statement, $before) {
     /**
-     * @before
+     * @var $calc CalcIterator
      */
-    protected function _before()
-    {
-        $numbers = [1, 2, 3, 4];
-        $this->calcIterator = new CalcIterator($numbers);
+    $calc = $before();
+    $itemList = $calc->getItemList();
+    $count = $calc->count();
+    printAssertion(verifyExt(
+        $statement . ' for the evaluated statement: <code>count($itemList)</code>',
+        count($itemList)
+    )->equals($count));
+
+    foreach ($calc as $key => $value) {
+        printAssertion(verifyExt(
+            $statement . ' for the evaluated statement: <code>$itemList[$key]</code>',
+            $value
+        )->equals($itemList[$key]));
     }
-
-    /**
-     * @test
-     */
-    public function testCanImplementTheContract()
-    {
-        $this->specify("Can perform an operation", function () {
-            verify($this->calcIterator->calc('+', OperationContract::INT))->equals(10);
-        });
-
-        $this->specify("Can perform a foreach loop with Keys and values", function () {
-            $itemList = $this->calcIterator->getItemList();
-            $count = $this->calcIterator->count();
-            verify(count($itemList))->equals($count);
-            foreach ($this->calcIterator as $key => $value) {
-                verify($value)->equals($itemList[$key]);
-            }
-        });
-    }
-}
+});
+require_once __DIR__ . '/../partials/header.php';
+$title = 'Calc Iterator Test';
+require_once __DIR__ . '/../partials/footer.php';

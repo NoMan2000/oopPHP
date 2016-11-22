@@ -29,10 +29,10 @@ if (!function_exists('callBackAssertion')) {
         $exception = new Exception("$assertionStatement failed while expecting: $message");
         $validAssertion = assert($assertion, $exception);
         if ($validAssertion) {
-            echo "<p>Assertion: $assertionStatement passed with expectation: $message</p>";
+            echo "<p class='alert alert-info'><strong>Assertion:</strong> <code>$assertionStatement</code> passed with expectation: $message</p>";
         }
         if (!$validAssertion) {
-            echo "<p>Invalid Assertion: $assertionStatement failed with expectation: $message</p>";
+            echo "<p class='alert alert-danger'><strong>Invalid Assertion:</strong> <code>$assertionStatement</code> failed with expectation: $message</p>";
         }
 
     }
@@ -53,6 +53,26 @@ if (!function_exists('specify')) {
     }
 }
 
+if (!function_exists("gettype_operators")) {
+    /**
+     * @return array
+     */
+    function gettype_operators()
+    {
+        return [
+            "boolean",
+            "integer",
+            "double",
+            "string",
+            "array",
+            "object",
+            "resource",
+            "NULL",
+            "unknown type",
+        ];
+    }
+}
+
 if (!function_exists('printAssertion')) {
     /**
      * @param array $assertion
@@ -62,7 +82,27 @@ if (!function_exists('printAssertion')) {
         $expected = array_get($assertion, 'expected');
         $actual = array_get($assertion, 'actual');
         $description = array_get($assertion, 'description');
-        $matches = $expected === $actual;
+        $matches = false;
+
+        if (is_object($expected)) {
+            $expected = (new ReflectionClass($expected))->getName();
+        }
+
+        if (is_object($actual)) {
+            $actual = (new ReflectionClass($actual))->getName();
+        }
+
+        $getType = in_array($expected, gettype_operators(), true);
+
+        if ($getType) {
+            $actual = gettype($actual);
+            $matches = $actual === $expected;
+        }
+
+        if (!$getType) {
+            $matches = $expected === $actual;
+        }
+
 
         if (!is_scalar($expected)) {
             $expected = "Type of " . gettype($expected) . "Not coercible";
@@ -95,7 +135,6 @@ if (!function_exists('printAssertion')) {
             $actual = "Type of " . gettype($description) . "Not coercible";
         }
         if ($matches) {
-
             echo "<p class='alert alert-success'><strong>Assertion:</strong> $description passed with an expected value of <code>$expected</code> that matches the actual value of <code>$actual</code>.</p>";
         }
         if (!$matches) {
@@ -109,7 +148,7 @@ if (!function_exists('verifyExt')) {
     /**
      * @param $description
      * @param null $actual
-     * @return VerifyExt
+     * @return object|VerifyExt
      */
     function verifyExt($description) {
         $reflect  = new ReflectionClass(VerifyExt::class);
