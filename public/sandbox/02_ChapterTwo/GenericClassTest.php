@@ -3,7 +3,8 @@
 require_once __DIR__ . '/../../bootstrap.php';
 
 use Oopphp\ChapterTwo\GenericClass;
-
+$title = "Generic Class Test";
+require_once __DIR__ . '/../partials/header.php';
 /**
  * @return GenericClass
  */
@@ -69,6 +70,6 @@ specify($statement = "Should be able to set and retrieve an integer value", $eva
         )->equals(14)
     );
 });
-$title = "Generic Class Test";
-require_once __DIR__ . '/../partials/header.php';
-require_once __DIR__ . '/../partials/footer.php';
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
+}

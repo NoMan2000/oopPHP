@@ -5,6 +5,9 @@ require_once __DIR__ . '/../../bootstrap.php';
 use Oopphp\ChapterThree\AddCalc;
 use Oopphp\ChapterThree\AddCalcDiff;
 
+$title = 'Add Calc Test';
+require_once __DIR__ . '/../partials/header.php';
+
 /**
  * @return object
  */
@@ -85,6 +88,6 @@ specify($statement = "Can add a variable range of numbers and return an integer"
     )->internalType('integer'));
 });
 
-$title = 'Add Calc Test';
-require_once __DIR__ . '/../partials/header.php';
-require_once __DIR__ . '/../partials/footer.php';
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
+}

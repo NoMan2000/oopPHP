@@ -7,7 +7,7 @@ use Codeception\Specify;
 
 /**
  * Class SingletonTest
- * @package ChapterEight
+ * @package 8_ChapterEight
  */
 class SingletonTest extends \Codeception\Test\Unit
 {

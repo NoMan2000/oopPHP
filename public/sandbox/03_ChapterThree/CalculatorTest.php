@@ -6,7 +6,8 @@ use Oopphp\ChapterThree\SubtractCalc;
 use Oopphp\Contracts\OperationContract;
 
 require_once __DIR__ . '/../../bootstrap.php';
-
+$title = "Test Calculator Class";
+require_once __DIR__ . '/../partials/header.php';
 /**
  * @return Calculator
  */
@@ -138,6 +139,6 @@ specify($statement = "Will throw an Exception if the return type is not known", 
     )->expectException(InvalidArgumentException::class));
 });
 
-$title = "Test Calculator Class";
-require_once __DIR__ . '/../partials/header.php';
-require_once __DIR__ . '/../partials/footer.php';
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
+}

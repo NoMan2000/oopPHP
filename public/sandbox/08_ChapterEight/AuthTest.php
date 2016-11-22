@@ -5,7 +5,7 @@ use Codeception\Specify;
 use Oopphp\ChapterEight\Auth;
 /**
  * Class AuthTest
- * @package ChapterEight
+ * @package 8_ChapterEight
  */
 class AuthTest extends \Codeception\Test\Unit
 {

@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . '/../../bootstrap.php';
+$title = "Beginner Test";
+require_once __DIR__ . '/../partials/header.php';
 
 use Oopphp\ChapterOne\Beginner;
 
@@ -45,6 +47,7 @@ specify($statement = "Should evaluate the passed in boolean as a boolean", $eval
     printAssertion(verifyExt($statement . ' for the evaluated statement: <code>$getClass()->isBool(true))->equals(true)</code>', $getClass()->isBool(true))->equals(true));
     printAssertion(verifyExt($statement . ' for the <code>$getClass()->isBool(false))->equals(false)</code>', $getClass()->isBool(false))->equals(false));
 });
-$title = "Beginner Test";
-require_once __DIR__ . '/../partials/header.php';
-require_once __DIR__ . '/../partials/footer.php';
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
+}

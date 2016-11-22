@@ -8,7 +8,7 @@ require_once __DIR__ . '/../../../public/bootstrap.php';
 
 /**
  * Class Singleton
- * @package Oopphp\ChapterEight
+ * @package Oopphp\8_ChapterEight
  */
 class Singleton
 {

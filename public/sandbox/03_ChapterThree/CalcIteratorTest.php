@@ -4,7 +4,8 @@ use Oopphp\ChapterThree\CalcIterator;
 use Oopphp\Contracts\OperationContract;
 
 require_once __DIR__ . '/../../bootstrap.php';
-
+$title = 'Calc Iterator Test';
+require_once __DIR__ . '/../partials/header.php';
 /**
  * @return CalcIterator
  */
@@ -40,6 +41,7 @@ specify($statement = "Can perform a foreach loop with Keys and values", $exec = 
         )->equals($itemList[$key]));
     }
 });
-$title = 'Calc Iterator Test';
-require_once __DIR__ . '/../partials/header.php';
-require_once __DIR__ . '/../partials/footer.php';
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
+}

@@ -7,3 +7,4 @@
     <link rel="stylesheet" href="/deps/bootstrap/dist/css/bootstrap-theme.min.css">
 </head>
 <body>
+<div class="container-fluid">

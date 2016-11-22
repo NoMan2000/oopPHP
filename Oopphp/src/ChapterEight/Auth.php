@@ -13,7 +13,7 @@ require_once __DIR__ . '/../../../public/bootstrap.php';
 
 /**
  * Class LogTest
- * @package Oopphp\ChapterEight
+ * @package Oopphp\8_ChapterEight
  */
 class Auth implements LoggerInterface, LoggerAwareInterface
 {
