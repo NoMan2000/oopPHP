@@ -7,7 +7,7 @@ coverage:
       - Oopphp/src/*.md
       - Oopphp/src/MagicClass.php
       - Oopphp/src/Traits/*
-      - Oopphp/src/Functions/*
+      - Oopphp/src/Testing/*
 paths:
     tests: tests
     log: public/_output

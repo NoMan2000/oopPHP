@@ -727,30 +727,6 @@ class VerifyExt extends Verify
     }
 
     /**
-     * @param mixed      $exception
-     * @param string     $message
-     * @param int|string $code
-     *
-     * @throws PHPUnit_Framework_Exception
-     *
-     * @since      Method available since Release 3.2.0
-     * @deprecated Method deprecated since Release 5.2.0
-     */
-    public function setExpectedException($exception, $message = '', $code = null)
-    {
-        $this->expectedException = $exception;
-
-        if ($message !== null && $message !== '') {
-            $this->expectExceptionMessage($message, false);
-        }
-
-        if ($code !== null) {
-            $this->expectExceptionCode($code, false);
-        }
-        return $this->runExceptions();
-    }
-
-    /**
      * @param mixed  $exception
      * @param string $messageRegExp
      * @param int    $code
@@ -861,11 +837,12 @@ class VerifyExt extends Verify
     }
 
     /**
-     * @return null
+     * @return array
      * @throws Throwable
      */
     protected function runExceptions()
     {
+        $testResult = null;
         try {
             $methodName = $this->actual;
             if (is_callable($methodName)) {
@@ -935,7 +912,7 @@ class VerifyExt extends Verify
 
                 return [
                     'expected' => $this->expectedException,
-                    'actual' => $this->expectedException,
+                    'actual' => $e,
                     'description' => $this->description
                 ];
             } else {
@@ -943,29 +920,9 @@ class VerifyExt extends Verify
             }
         }
 
-        if ($this->expectedException !== null) {
-            $this->assertThat(
-                null,
-                new PHPUnit_Framework_Constraint_Exception(
-                    $this->expectedException
-                )
-            );
-        }
-        /**
-         * $this->expectedException = $exception;
-
-        if ($message !== null && $message !== '') {
-        $this->expectExceptionMessage($message, false);
-        }
-
-        if ($code !== null) {
-        $this->expectExceptionCode($code, false);
-        }
-         */
-
         return [
             'expected' => $this->expectedException,
-            'actual' => $testResult,
+            'actual' => $this->actual,
             'description' => $this->description
         ];
 
