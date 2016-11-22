@@ -40,6 +40,6 @@ specify($statement = "Can perform a foreach loop with Keys and values", $exec = 
         )->equals($itemList[$key]));
     }
 });
-require_once __DIR__ . '/../partials/header.php';
 $title = 'Calc Iterator Test';
+require_once __DIR__ . '/../partials/header.php';
 require_once __DIR__ . '/../partials/footer.php';

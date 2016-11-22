@@ -6,6 +6,18 @@ require_once __DIR__ . '/../../../public/bootstrap.php';
 require_once __DIR__ . "/../../../vendor/codeception/verify/src/Codeception/Verify.php";
 
 use Codeception\Verify;
+use PHPUnit_Util_InvalidArgumentHelper;
+use PHPUnit_Framework_Exception;
+use ReflectionClass;
+use ReflectionException;
+use Throwable;
+use Exception;
+use PHPUnit_Framework_Constraint_Exception;
+use PHPUnit_Framework_Constraint_ExceptionMessage;
+use PHPUnit_Framework_Constraint_ExceptionMessageRegExp;
+use PHPUnit_Framework_Constraint_ExceptionCode;
+use PHPUnit_Framework_Constraint;
+use PHPUnit_Framework_Assert as a;
 
 /**
  * Class VerifyExt
@@ -14,6 +26,32 @@ use Codeception\Verify;
 
 class VerifyExt extends Verify
 {
+    /**
+     * @var int
+     */
+    private static $count = 0;
+    /**
+     * @var
+     */
+    protected $expectedException;
+    /**
+     * @var
+     */
+    protected $expectedExceptionMessageRegExp;
+    /**
+     * @var
+     */
+    protected $expectedExceptionCode;
+    /**
+     * @var
+     */
+    protected $expectedExceptionMessage;
+
+    /**
+     * @var string
+     */
+    protected $name = "VerifyTest";
+
     /**
      * @param bool $isFileExpectation
      */
@@ -688,4 +726,248 @@ class VerifyExt extends Verify
         ];
     }
 
+    /**
+     * @param mixed      $exception
+     * @param string     $message
+     * @param int|string $code
+     *
+     * @throws PHPUnit_Framework_Exception
+     *
+     * @since      Method available since Release 3.2.0
+     * @deprecated Method deprecated since Release 5.2.0
+     */
+    public function setExpectedException($exception, $message = '', $code = null)
+    {
+        $this->expectedException = $exception;
+
+        if ($message !== null && $message !== '') {
+            $this->expectExceptionMessage($message, false);
+        }
+
+        if ($code !== null) {
+            $this->expectExceptionCode($code, false);
+        }
+        return $this->runExceptions();
+    }
+
+    /**
+     * @param mixed  $exception
+     * @param string $messageRegExp
+     * @param int    $code
+     *
+     * @throws PHPUnit_Framework_Exception
+     *
+     * @since Method available since Release 4.3.0
+     *
+     * @deprecated Method deprecated since Release 5.6.0
+     */
+    public function setExpectedExceptionRegExp($exception, $messageRegExp = '', $code = null)
+    {
+        if (!is_string($messageRegExp)) {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(2, 'string');
+        }
+
+        $this->expectedException              = $exception;
+        $this->expectedExceptionMessageRegExp = $messageRegExp;
+
+        if ($code !== null) {
+            $this->expectExceptionCode($code, false);
+        }
+        return $this->runExceptions();
+    }
+
+    /**
+     * @param string $exception
+     *
+     * @since Method available since Release 5.2.0
+     */
+    public function expectException($exception)
+    {
+        if (!is_string($exception)) {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
+        }
+        $this->expectedException = $exception;
+        return $this->runExceptions();
+    }
+
+    /**
+     * @param int|string $code
+     * @param bool $runCode
+     * @throws PHPUnit_Framework_Exception
+     *
+     * @since Method available since Release 5.2.0
+     */
+    public function expectExceptionCode($code, $runCode = true)
+    {
+        if (!is_int($code) && !is_string($code)) {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'integer or string');
+        }
+
+        $this->expectedExceptionCode = $code;
+        if ($runCode) {
+            return $this->runExceptions();
+        }
+    }
+
+    /**
+     * @param string $message
+     * @param bool $runCode
+     * @throws PHPUnit_Framework_Exception
+     *
+     * @since Method available since Release 5.2.0
+     */
+    public function expectExceptionMessage($message, $runCode = true)
+    {
+        if (!is_string($message)) {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
+        }
+        $this->expectedExceptionMessage = $message;
+        if ($runCode) {
+            return $this->runExceptions();
+        }
+    }
+
+    /**
+     * @param string $messageRegExp
+     *
+     * @throws PHPUnit_Framework_Exception
+     *
+     * @since Method available since Release 5.2.0
+     */
+    public function expectExceptionMessageRegExp($messageRegExp)
+    {
+        if (!is_string($messageRegExp)) {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'string');
+        }
+
+        $this->expectedExceptionMessageRegExp = $messageRegExp;
+        return $this->runExceptions();
+    }
+
+    /**
+     * Evaluates a PHPUnit_Framework_Constraint matcher object.
+     *
+     * @param mixed                        $value
+     * @param PHPUnit_Framework_Constraint $constraint
+     * @param string                       $message
+     *
+     * @since Method available since Release 3.0.0
+     */
+    public function assertThat($value, PHPUnit_Framework_Constraint $constraint, $message = '')
+    {
+        self::$count += count($constraint);
+
+        $constraint->evaluate($value, $message);
+    }
+
+    /**
+     * @return null
+     * @throws Throwable
+     */
+    protected function runExceptions()
+    {
+        try {
+            $methodName = $this->actual;
+            if (is_callable($methodName)) {
+                $testResult = $methodName();
+            }
+        } catch (Throwable $_e) {
+            $e = $_e;
+        } catch (Exception $_e) {
+            $e = $_e;
+        }
+
+
+        if (isset($e)) {
+            $checkException = false;
+
+            if (is_string($this->expectedException)) {
+                $checkException = true;
+
+                if ($e instanceof PHPUnit_Framework_Exception) {
+                    $checkException = false;
+                }
+
+                $reflector = new ReflectionClass($this->expectedException);
+
+                if ($this->expectedException == 'PHPUnit_Framework_Exception' ||
+                    $reflector->isSubclassOf('PHPUnit_Framework_Exception')) {
+                    $checkException = true;
+                }
+            }
+
+            if ($checkException) {
+                $this->assertThat(
+                    $e,
+                    new PHPUnit_Framework_Constraint_Exception(
+                        $this->expectedException
+                    )
+                );
+
+                if (is_string($this->expectedExceptionMessage) &&
+                    !empty($this->expectedExceptionMessage)) {
+                    $this->assertThat(
+                        $e,
+                        new PHPUnit_Framework_Constraint_ExceptionMessage(
+                            $this->expectedExceptionMessage
+                        )
+                    );
+                }
+
+                if (is_string($this->expectedExceptionMessageRegExp) &&
+                    !empty($this->expectedExceptionMessageRegExp)) {
+                    $this->assertThat(
+                        $e,
+                        new PHPUnit_Framework_Constraint_ExceptionMessageRegExp(
+                            $this->expectedExceptionMessageRegExp
+                        )
+                    );
+                }
+
+                if ($this->expectedExceptionCode !== null) {
+                    $this->assertThat(
+                        $e,
+                        new PHPUnit_Framework_Constraint_ExceptionCode(
+                            $this->expectedExceptionCode
+                        )
+                    );
+                }
+
+                return [
+                    'expected' => $this->expectedException,
+                    'actual' => $this->expectedException,
+                    'description' => $this->description
+                ];
+            } else {
+                throw $e;
+            }
+        }
+
+        if ($this->expectedException !== null) {
+            $this->assertThat(
+                null,
+                new PHPUnit_Framework_Constraint_Exception(
+                    $this->expectedException
+                )
+            );
+        }
+        /**
+         * $this->expectedException = $exception;
+
+        if ($message !== null && $message !== '') {
+        $this->expectExceptionMessage($message, false);
+        }
+
+        if ($code !== null) {
+        $this->expectExceptionCode($code, false);
+        }
+         */
+
+        return [
+            'expected' => $this->expectedException,
+            'actual' => $testResult,
+            'description' => $this->description
+        ];
+
+    }
 }

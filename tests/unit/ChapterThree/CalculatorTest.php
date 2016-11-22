@@ -85,7 +85,7 @@ class CalculatorTest extends \Codeception\Test\Unit
      */
     public function testCanThrowInvalidArgumentExceptionForBadReturnTypeOnAddition()
     {
-        $this->specify("Will throw an Exception if the operation asked is not known", function () {
+        $this->specify("Will throw an Exception if the return type is not known", function () {
             $calc = $this->calc;
             $calc->calc('+', 2, 1, 2, 3, 4, 5, 6, 7);
         });
@@ -98,7 +98,7 @@ class CalculatorTest extends \Codeception\Test\Unit
      */
     public function testCanThrowInvalidArgumentExceptionForBadReturnTypeOnSubtraction()
     {
-        $this->specify("Will throw an Exception if the operation asked is not known", function () {
+        $this->specify("Will throw an Exception if the return type is not known", function () {
             $calc = $this->calc;
             $calc->calc('-', 2, 1, 2, 3, 4, 5, 6, 7);
         });

@@ -85,6 +85,6 @@ specify($statement = "Can add a variable range of numbers and return an integer"
     )->internalType('integer'));
 });
 
-require_once __DIR__ . '/../partials/header.php';
 $title = 'Add Calc Test';
+require_once __DIR__ . '/../partials/header.php';
 require_once __DIR__ . '/../partials/footer.php';

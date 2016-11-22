@@ -76,8 +76,9 @@ if (!function_exists("gettype_operators")) {
 if (!function_exists('printAssertion')) {
     /**
      * @param array $assertion
+     * @param bool $weakComparison
      */
-    function printAssertion(array $assertion)
+    function printAssertion(array $assertion, bool $weakComparison = false)
     {
         $expected = array_get($assertion, 'expected');
         $actual = array_get($assertion, 'actual');
@@ -96,13 +97,11 @@ if (!function_exists('printAssertion')) {
 
         if ($getType) {
             $actual = gettype($actual);
-            $matches = $actual === $expected;
         }
-
-        if (!$getType) {
-            $matches = $expected === $actual;
+        $matches = $expected === $actual;
+        if ($weakComparison) {
+            $matches = $expected == $actual;
         }
-
 
         if (!is_scalar($expected)) {
             $expected = "Type of " . gettype($expected) . "Not coercible";
