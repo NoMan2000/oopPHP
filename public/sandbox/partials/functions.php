@@ -137,7 +137,7 @@ if (!function_exists('printAssertion')) {
             echo "<p class='alert alert-success'><strong>Assertion:</strong> $description passed with an expected value of <var>$expected</var> that matches the actual value of <var>$actual</var>.</p>";
         }
         if (!$matches) {
-            echo "<p>Assertion: $description failed with an expected value of $expected that does not match the actual value of $actual.</p>";
+            echo "<p class='alert alert-danger'><strong>Assertion:</strong> $description failed with an expected value of <var>$expected</var> that does not match the actual value of <var>$actual</var>.</p>";
         }
     }
 }
