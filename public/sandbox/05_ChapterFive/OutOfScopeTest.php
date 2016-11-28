@@ -1,41 +1,28 @@
 <?php
 namespace ChapterFive;
 
-
 use Codeception\Specify;
 use Oopphp\ChapterFive\OutOfScope;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Out of Scope Test";
+require_once __DIR__ . '/../partials/header.php';
+
 /**
- * Class OutOfScopeTest
- * @package ChapterFive
+ * @return OutOfScope
  */
-class OutOfScopeTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function() {
+    return new OutOfScope();
+};
 
-    /**
-     * @var OutOfScope
-     */
-    protected $outOfScopeClass;
+specify($statement = "Can get and set a value dynamically", function () use ($statement, $before) {
+    $outOfScopeClass = $before();
+    verifyExt($outOfScopeClass->foo)->equals(null)->e();
+    $outOfScopeClass->foo = "bar";
+    verifyExt($outOfScopeClass->foo)->equals("bar")->e();
+});
 
-    /**
-     * @before
-     */
-    protected function _before()
-    {
-        $this->outOfScopeClass = new OutOfScope();
-    }
 
-    /**
-     * @test
-     */
-    public function testCanCreateMagicGettersAndSetters()
-    {
-        $this->specify("Can get and set a value dynamically", function () {
-
-            verify($this->outOfScopeClass->foo)->equals(null);
-            $this->outOfScopeClass->foo = "bar";
-            verify($this->outOfScopeClass->foo)->equals("bar");
-        });
-    }
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
 }

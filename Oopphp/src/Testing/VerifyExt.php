@@ -53,12 +53,17 @@ class VerifyExt extends Verify
     protected $name = "VerifyTest";
 
     /**
+     * @var array
+     */
+    protected $returnArray = [];
+
+    /**
      * @param bool $isFileExpectation
      */
     public function setIsFileExpectation($isFileExpectation)
     {
         parent::setIsFileExpectation($isFileExpectation);
-        return [
+        return $this->returnArray = [
             'expected' => $isFileExpectation,
             'actual' => $this->actual,
             'description' => $this->description
@@ -71,11 +76,12 @@ class VerifyExt extends Verify
     public function equals($expected)
     {
         parent::equals($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -84,11 +90,12 @@ class VerifyExt extends Verify
     public function notEquals($expected)
     {
         parent::notEquals($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -97,11 +104,12 @@ class VerifyExt extends Verify
     public function contains($needle)
     {
         parent::contains($needle);
-        return [
+        $this->returnArray = [
             'expected' => $needle,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -110,11 +118,12 @@ class VerifyExt extends Verify
     public function notContains($needle)
     {
         parent::notContains($needle);
-        return [
+        $this->returnArray = [
             'expected' => $needle,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -123,11 +132,12 @@ class VerifyExt extends Verify
     public function greaterThan($expected)
     {
         parent::greaterThan($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -136,11 +146,12 @@ class VerifyExt extends Verify
     public function lessThan($expected)
     {
         parent::lessThan($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -149,11 +160,12 @@ class VerifyExt extends Verify
     public function greaterOrEquals($expected)
     {
         parent::greaterOrEquals($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -162,11 +174,12 @@ class VerifyExt extends Verify
     public function lessOrEquals($expected)
     {
         parent::lessOrEquals($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -175,11 +188,12 @@ class VerifyExt extends Verify
     public function true()
     {
         parent::true();
-        return [
+        $this->returnArray = [
             'expected' => true,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -188,11 +202,12 @@ class VerifyExt extends Verify
     public function false()
     {
         parent::false();
-        return [
+        $this->returnArray = [
             'expected' => null,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -201,11 +216,12 @@ class VerifyExt extends Verify
     public function null()
     {
         parent::null();
-        return [
+        $this->returnArray = [
             'expected' => null,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -214,11 +230,12 @@ class VerifyExt extends Verify
     public function notNull()
     {
         parent::notNull();
-        return [
+        $this->returnArray = [
             'expected' => null,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -227,11 +244,12 @@ class VerifyExt extends Verify
     public function isEmpty()
     {
         parent::isEmpty();
-        return [
+        $this->returnArray = [
             'expected' => null,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -240,11 +258,12 @@ class VerifyExt extends Verify
     public function notEmpty()
     {
         parent::notEmpty();
-        return [
+        $this->returnArray = [
             'expected' => null,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -253,11 +272,12 @@ class VerifyExt extends Verify
     public function hasKey($key)
     {
         parent::hasKey($key);
-        return [
+        $this->returnArray = [
             'expected' => $key,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -266,11 +286,12 @@ class VerifyExt extends Verify
     public function hasntKey($key)
     {
         parent::hasntKey($key);
-        return [
+        $this->returnArray = [
             'expected' => $key,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -286,11 +307,12 @@ class VerifyExt extends Verify
         } elseif ($classType === 'string') {
             $className = $class;
         }
-        return [
+        $this->returnArray = [
             'expected' => $className,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -306,11 +328,12 @@ class VerifyExt extends Verify
         } elseif ($classType === 'string') {
             $className = $class;
         }
-        return [
+        $this->returnArray = [
             'expected' => $className,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -319,11 +342,12 @@ class VerifyExt extends Verify
     public function internalType($type)
     {
         parent::internalType($type);
-        return [
+        $this->returnArray = [
             'expected' => $type,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -332,11 +356,12 @@ class VerifyExt extends Verify
     public function notInternalType($type)
     {
         parent::notInternalType($type);
-        return [
+        $this->returnArray = [
             'expected' => $type,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -345,11 +370,12 @@ class VerifyExt extends Verify
     public function hasAttribute($attribute)
     {
         parent::hasAttribute($attribute);
-        return [
+        $this->returnArray = [
             'expected' => $attribute,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -358,11 +384,12 @@ class VerifyExt extends Verify
     public function notHasAttribute($attribute)
     {
         parent::notHasAttribute($attribute);
-        return [
+        $this->returnArray = [
             'expected' => $attribute,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -371,11 +398,12 @@ class VerifyExt extends Verify
     public function hasStaticAttribute($attribute)
     {
         parent::hasStaticAttribute($attribute);
-        return [
+        $this->returnArray = [
             'expected' => $attribute,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -384,11 +412,12 @@ class VerifyExt extends Verify
     public function notHasStaticAttribute($attribute)
     {
         parent::notHasStaticAttribute($attribute);
-        return [
+        $this->returnArray = [
             'expected' => $attribute,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -398,11 +427,12 @@ class VerifyExt extends Verify
     public function containsOnly($type, $isNativeType = null)
     {
         parent::containsOnly($type, $isNativeType);
-        return [
+        $this->returnArray = [
             'expected' => $type . $isNativeType,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -412,11 +442,12 @@ class VerifyExt extends Verify
     public function notContainsOnly($type, $isNativeType = null)
     {
         parent::notContainsOnly($type, $isNativeType);
-        return [
+        $this->returnArray = [
             'expected' => $type . $isNativeType,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -432,11 +463,12 @@ class VerifyExt extends Verify
         } elseif ($classType === 'string') {
             $className = $class;
         }
-        return [
+        $this->returnArray = [
             'expected' => $className,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -445,11 +477,12 @@ class VerifyExt extends Verify
     public function count($array)
     {
         parent::count($array);
-        return [
+        $this->returnArray = [
             'expected' => $array,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -458,11 +491,12 @@ class VerifyExt extends Verify
     public function notCount($array)
     {
         parent::notCount($array);
-        return [
+        $this->returnArray = [
             'expected' => $array,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -472,11 +506,12 @@ class VerifyExt extends Verify
     public function equalXMLStructure($xml, $checkAttributes = false)
     {
         parent::equalXMLStructure($xml, $checkAttributes);
-        return [
+        $this->returnArray = [
             'expected' => $xml . $checkAttributes,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -485,11 +520,12 @@ class VerifyExt extends Verify
     public function exists()
     {
         parent::exists();
-        return [
+        $this->returnArray = [
             'expected' => null,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -498,11 +534,12 @@ class VerifyExt extends Verify
     public function notExists()
     {
         parent::notExists();
-        return [
+        $this->returnArray = [
             'expected' => null,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -511,11 +548,12 @@ class VerifyExt extends Verify
     public function equalsJsonFile($file)
     {
         parent::equalsJsonFile($file);
-        return [
+        $this->returnArray = [
             'expected' => $file,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -524,11 +562,12 @@ class VerifyExt extends Verify
     public function equalsJsonString($string)
     {
         parent::equalsJsonString($string);
-        return [
+        $this->returnArray = [
             'expected' => $string,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -537,11 +576,12 @@ class VerifyExt extends Verify
     public function regExp($expression)
     {
         parent::regExp($expression);
-        return [
+        $this->returnArray = [
             'expected' => $expression,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -550,11 +590,12 @@ class VerifyExt extends Verify
     public function matchesFormat($format)
     {
         parent::matchesFormat($format);
-        return [
+        $this->returnArray = [
             'expected' => $format,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -563,11 +604,12 @@ class VerifyExt extends Verify
     public function notMatchesFormat($format)
     {
         parent::notMatchesFormat($format);
-        return [
+        $this->returnArray = [
             'expected' => $format,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -576,11 +618,12 @@ class VerifyExt extends Verify
     public function matchesFormatFile($formatFile)
     {
         parent::matchesFormatFile($formatFile);
-        return [
+        $this->returnArray = [
             'expected' => $formatFile,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -589,11 +632,12 @@ class VerifyExt extends Verify
     public function notMatchesFormatFile($formatFile)
     {
         parent::notMatchesFormatFile($formatFile);
-        return [
+        $this->returnArray = [
             'expected' => $formatFile,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -602,11 +646,12 @@ class VerifyExt extends Verify
     public function same($expected)
     {
         parent::same($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -615,11 +660,12 @@ class VerifyExt extends Verify
     public function notSame($expected)
     {
         parent::notSame($expected);
-        return [
+        $this->returnArray = [
             'expected' => $expected,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -628,11 +674,12 @@ class VerifyExt extends Verify
     public function endsWith($suffix)
     {
         parent::endsWith($suffix);
-        return [
+        $this->returnArray = [
             'expected' => $suffix,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -641,11 +688,12 @@ class VerifyExt extends Verify
     public function notEndsWith($suffix)
     {
         parent::notEndsWith($suffix);
-        return [
+        $this->returnArray = [
             'expected' => $suffix,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -654,11 +702,12 @@ class VerifyExt extends Verify
     public function equalsFile($file)
     {
         parent::equalsFile($file);
-        return [
+        $this->returnArray = [
             'expected' => $file,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -667,11 +716,12 @@ class VerifyExt extends Verify
     public function notEqualsFile($file)
     {
         parent::notEqualsFile($file);
-        return [
+        $this->returnArray = [
             'expected' => $file,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -680,11 +730,12 @@ class VerifyExt extends Verify
     public function startsWith($prefix)
     {
         parent::startsWith($prefix);
-        return [
+        $this->returnArray = [
             'expected' => $prefix,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -693,11 +744,12 @@ class VerifyExt extends Verify
     public function notStartsWith($prefix)
     {
         parent::notStartsWith($prefix);
-        return [
+        $this->returnArray = [
             'expected' => $prefix,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -706,11 +758,12 @@ class VerifyExt extends Verify
     public function equalsXmlFile($file)
     {
         parent::equalsXmlFile($file);
-        return [
+        $this->returnArray = [
             'expected' => $file,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -719,11 +772,12 @@ class VerifyExt extends Verify
     public function equalsXmlString($xmlString)
     {
         parent::equalsXmlString($xmlString);
-        return [
+        $this->returnArray = [
             'expected' => $xmlString,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
     }
 
     /**
@@ -837,7 +891,7 @@ class VerifyExt extends Verify
     }
 
     /**
-     * @return array
+     * @return $this
      * @throws Throwable
      */
     protected function runExceptions()
@@ -910,21 +964,107 @@ class VerifyExt extends Verify
                     );
                 }
 
-                return [
+                $this->returnArray = [
                     'expected' => $this->expectedException,
                     'actual' => $e,
                     'description' => $this->description
                 ];
+                return $this;
             } else {
                 throw $e;
             }
         }
 
-        return [
+        $this->returnArray = [
             'expected' => $this->expectedException,
             'actual' => $this->actual,
             'description' => $this->description
         ];
+        return $this;
+    }
 
+    /**
+     * @return array
+     */
+    public function getReturnArray() : array
+    {
+        return $this->returnArray;
+    }
+
+    /**
+     * @param bool $weakComparison
+     */
+    public function printAssertion(bool $weakComparison = false)
+    {
+        $assertion = $this->getReturnArray();
+        $expected = array_get($assertion, 'expected');
+        $actual = array_get($assertion, 'actual');
+        $description = array_get($assertion, 'description');
+        $matches = false;
+
+        if (is_object($expected)) {
+            $expected = (new ReflectionClass($expected))->getName();
+        }
+
+        if (is_object($actual)) {
+            $actual = (new ReflectionClass($actual))->getName();
+        }
+
+        $getType = in_array($expected, gettype_operators(), true);
+
+        if ($getType) {
+            $actual = gettype($actual);
+        }
+        $matches = $expected === $actual;
+        if ($weakComparison) {
+            $matches = $expected == $actual;
+        }
+
+        if (!is_scalar($expected) && $expected !== null) {
+            $expected = "Type of " . gettype($expected) . "Not coercible";
+        }
+        if (true === $expected) {
+            $expected = 'true';
+        }
+        if (false === $expected) {
+            $expected = 'false';
+        }
+        if (null === $expected) {
+            $expected = 'null';
+        }
+
+        if (!is_scalar($actual) && null !== $actual) {
+            $actual = "Type of " . gettype($actual) . "Not coercible";
+        }
+
+        if (false === $actual) {
+            $actual = 'false';
+        }
+        if (null === $actual) {
+            $actual = 'null';
+        }
+        if (true === $actual) {
+            $actual = 'true';
+        }
+        // null fails is scalar
+        if (!is_scalar($description) && $description !== null) {
+            $actual = "Type of " . gettype($description) . " Not coercible";
+        }
+        if ($matches) {
+            echo "<p class='alert alert-success'><strong>Assertion:</strong> $description passed with an expected value of <var>$expected</var> that matches the actual value of <var>$actual</var>.</p>";
+        }
+        if (!$matches) {
+            echo "<p class='alert alert-danger'><strong>Assertion:</strong> $description failed with an expected value of <var>$expected</var> that does not match the actual value of <var>$actual</var>.</p>";
+        }
+        return $this;
+    }
+
+    /**
+     * @param bool $weakComparison
+     * @return VerifyExt
+     */
+    public function e(bool $weakComparison = false)
+    {
+        return $this->printAssertion($weakComparison);
     }
 }

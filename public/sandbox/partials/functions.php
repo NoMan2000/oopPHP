@@ -5,6 +5,10 @@ use Oopphp\Testing\VerifyExt;
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
 spl_autoload_register(
+/**
+ * @param $className
+ * @return mixed
+ */
     function ($className) {
         $file = str_replace('\\', '/', $className) . '.php';
         $classLocation = __DIR__ . "/../../unit/$file";
@@ -223,4 +227,66 @@ if (!function_exists('expect_fileExt')) {
     function expect_fileExt() {
         return call_user_func_array('verify_fileExt', func_get_args());
     }
+}
+
+if (!function_exists('test_generator')) {
+    /**
+     * @param string $file
+     * @param string $directory
+     * @param bool $noInclude
+     * @return array
+     */
+    function test_generator(string $file, string $directory, bool $noInclude = false)
+    {
+        $directoryInfo = new SplFileInfo($file);
+
+        $title = "All Tests for " . $directoryInfo->getPathname();
+        if (!$noInclude) {
+            require_once __DIR__ . '/../partials/header.php';
+        }
+
+        $directoryRecursiveIterator = new RecursiveDirectoryIterator($directory . '/');
+        $iterator = new RecursiveIteratorIterator($directoryRecursiveIterator);
+        $fileList = [];
+        /**
+         * @var $value SplFileInfo
+         */
+        foreach ($iterator as $key => $value) {
+            $isFile = $value->isFile() && !$value->isDir();
+            if ($isFile) {
+                $fileList[] = $value->getRealPath();
+            }
+        }
+
+        usort($fileList, 'strnatcmp');
+
+        foreach ($fileList as $file) {
+            $file = new SplFileInfo($file);
+            $fileName = $file->getBasename();
+            if ($fileName === 'index.php') {
+                continue;
+            }
+            $parentFolder = $file->getPath();
+            $pos = strripos($parentFolder, '/');
+            $parentName = substr($parentFolder, $pos) . '/' . $file->getBasename();
+            $parentPath = '/sandbox/' . $parentName;
+            echo "<section class='folderTests panel panel-default'>
+          <div class='panel-heading'>
+            <h2 class='panel-title'>Unit Test for Chapter: <a href='$parentPath'>$parentName</a></h2>
+           </div>
+           <div class='panel-body'>
+          ";
+            require_once $file->getRealPath();
+            echo "</div></section>";
+        }
+        if (!$noInclude) {
+            $noInclude = true;
+            require_once __DIR__ . '/../partials/footer.php';
+        }
+        return [
+            'noInclude' => $noInclude,
+            'title' => $title,
+        ];
+    }
+
 }

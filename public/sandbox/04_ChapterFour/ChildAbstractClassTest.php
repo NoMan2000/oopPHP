@@ -1,49 +1,54 @@
 <?php
 namespace ChapterFour;
 
-
 use Codeception\Specify;
 use Oopphp\ChapterFour\ChildAbstractClass;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Child Abstract Class Test";
+require_once __DIR__ . '/../partials/header.php';
+
+
 /**
- * Class ChildAbstractClassTest
- * @package ChapterFour
+ * @return ChildAbstractClass
  */
-class ChildAbstractClassTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function() {
+    return new ChildAbstractClass();
+};
+
+specify($statement = "Can get the parent class's methods", function () use ($statement, $before) {
     /**
-     * @var ChildAbstractClass
+     * @var $childClass ChildAbstractClass
      */
-    protected $childClass;
+    $childClass = $before();
+    verifyExt(
+        $statement . ' <code>$childClass->getFinalFunction()</code>',
+        $childClass->getFinalFunction()
+    )->equals("This is the final function")->e();
+});
 
+specify($statement = "Can extend a parent's methods and use a default value on a protected variable", function ()  use ($before, $statement) {
     /**
-     * @before
+     * @var $childClass ChildAbstractClass
      */
-    protected function _before()
-    {
-        $this->childClass = new ChildAbstractClass();
-    }
+    $childClass = $before();
+    verifyExt(
+        $statement . ' <code>$childClass->getMyVariable()</code>',
+        $childClass->getMyVariable()
+    )->equals("var")->e();
+});
 
+specify($statement = "Can implement an abstract method", function () use($before, $statement){
     /**
-     * @test
+     * @var $childClass ChildAbstractClass
      */
-    public function testCanImplementAndExtendTheParentClass()
-    {
-        $this->specify("Can get the parent class's methods", function () {
-            verify($this->childClass->getFinalFunction())->equals("This is the final function");
-        });
-
-        $this->specify("Can extend a parent's methods and use a default value on a protected variable", function () {
-            verify($this->childClass->getMyVariable())->equals("var");
-        });
-
-        $this->specify("Can implement an abstract method", function () {
-            $this->childClass->setHiddenVariable('hidden');
-            $this->childClass->setMyVariable('test');
-            $data = $this->childClass->getData();
-            verify($data['privateVariable'])->equals('hidden');
-            verify($data['protectedVariable'])->equals('test');
-        });
-    }
+    $childClass = $before();
+    $childClass->setHiddenVariable('hidden');
+    $childClass->setMyVariable('test');
+    $data = $childClass->getData();
+    verifyExt($data['privateVariable'])->equals('hidden')->e();
+    verifyExt($data['protectedVariable'])->equals('test')->e();
+});
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
 }

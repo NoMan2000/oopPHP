@@ -39,22 +39,18 @@ callBackAssertion(
     })($before) === 14'
 );
 
-specify($statement = "Should have a default int value of 0", $eval = function () use ($before, $statement) {
-    printAssertion(
-        verifyExt(
-            $statement . ' for the evaluated statement: <code>$before()->getIntProperty()->equals(0)</code>',
-            $before()->getIntProperty()
-        )->equals(0)
-    );
+specify($statement = "Should have a default int value of 0", function () use ($before, $statement) {
+    verifyExt(
+        $statement . ' <code>$before()->getIntProperty()->equals(0)</code>',
+        $before()->getIntProperty()
+    )->equals(0)->e();
 });
 
 specify($statement = "Should return the class back as a fluent method", $eval = function () use ($before, $statement) {
-    printAssertion(
-        verifyExt(
-            $statement . ' for the evaluated statement: <code>$before()->setIntProperty(10)->isInstanceOf(GenericClass::class)</code>',
-            $before()->setIntProperty(10)
-        )->isInstanceOf(GenericClass::class)
-    );
+    verifyExt(
+        $statement . ' for the evaluated statement: <code>$before()->setIntProperty(10)->isInstanceOf(GenericClass::class)</code>',
+        $before()->setIntProperty(10)
+    )->isInstanceOf(GenericClass::class)->e();
 });
 
 specify($statement = "Should be able to set and retrieve an integer value", $eval = function () use ($before, $statement) {
@@ -63,12 +59,10 @@ specify($statement = "Should be able to set and retrieve an integer value", $eva
      */
     $class = $before();
     $class->setIntProperty(14);
-    printAssertion(
-        verifyExt(
-            $statement . ' for the evaluated statement: <code>$class->getIntProperty()->equals(14)</code>',
-            $class->getIntProperty()
-        )->equals(14)
-    );
+    verifyExt(
+        $statement . ' for the evaluated statement: <code>$class->getIntProperty()->equals(14)</code>',
+        $class->getIntProperty()
+    )->equals(14)->e();
 });
 if (!isset($noInclude)) {
     require_once __DIR__ . '/../partials/footer.php';

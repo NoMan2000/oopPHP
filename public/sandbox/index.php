@@ -24,10 +24,15 @@ usort($fileList, 'strnatcmp');
 
 foreach ($fileList as $file) {
     $file = new SplFileInfo($file);
+    $fileName = $file->getBasename();
+    if ($fileName === 'index.php') {
+        continue;
+    }
     $parentFolder = $file->getPath();
-    $pos = strripos($parentFolder, '/');
+    $pos = strripos($parentFolder, '/') + 1;
     $parentName = substr($parentFolder, $pos) . '/' . $file->getBasename();
     $parentPath = '/sandbox/' . $parentName;
+
     echo "<section class='folderTests panel panel-default'>
           <div class='panel-heading'>
             <h2 class='panel-title'>Unit Test for Chapter: <a href='$parentPath'>$parentName</a></h2>

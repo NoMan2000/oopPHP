@@ -15,30 +15,30 @@ $before = function () {
 };
 
 
-specify($spec = "Can perform an operation", $exec = function () use ($before, $spec) {
-    printAssertion(verifyExt(
-        $spec . ' for the evaluated statement: <code>$before()->calcIterator->calc("+", OperationContract::INT)</code>',
+specify($spec = "Can perform an operation", function () use ($before, $spec) {
+    verifyExt(
+        $spec . ' <code>$before()->calcIterator->calc("+", OperationContract::INT)</code>',
         $before()->calc('+', OperationContract::INT)
-    )->equals(10));
+    )->equals(10)->e();
 });
 
-specify($statement = "Can perform a foreach loop with Keys and values", $exec = function () use ($statement, $before) {
+specify($statement = "Can perform a foreach loop with Keys and values", function () use ($statement, $before) {
     /**
      * @var $calc CalcIterator
      */
     $calc = $before();
     $itemList = $calc->getItemList();
     $count = $calc->count();
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>count($itemList)</code>',
+    verifyExt(
+        $statement . ' <code>count($itemList)</code>',
         count($itemList)
-    )->equals($count));
+    )->equals($count)->e();
 
     foreach ($calc as $key => $value) {
-        printAssertion(verifyExt(
-            $statement . ' for the evaluated statement: <code>$itemList[$key]</code>',
+        verifyExt(
+            $statement . ' <code>$itemList[$key]</code>',
             $value
-        )->equals($itemList[$key]));
+        )->equals($itemList[$key])->e();
     }
 });
 

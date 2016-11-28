@@ -4,6 +4,8 @@ namespace ChapterSeven;
 use Codeception\Specify;
 use Oopphp\Exceptions\ErrorExceptionHandler;
 
+require_once __DIR__ . '/../../bootstrap.php';
+
 /**
  * Class ExceptionsTest
  * @package ChapterSeven
@@ -47,4 +49,8 @@ class ExceptionsTest extends \Codeception\Test\Unit
         });
 
     }
+}
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
 }

@@ -36,3 +36,7 @@ class UserClassGeneratorTest extends \Codeception\Test\Unit
         });
     }
 }
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
+}

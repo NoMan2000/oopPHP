@@ -1,38 +1,31 @@
 <?php
+
 namespace ChapterFive;
 
-
-use Codeception\Specify;
 use Oopphp\ChapterFive\DynamicProperty;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Dynamic Property Test";
+require_once __DIR__ . '/../partials/header.php';
+
 /**
- * Class DynamicPropertyTest
- * @package ChapterFive
+ * @return DynamicProperty
  */
-class DynamicPropertyTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function() {
+    return new DynamicProperty();
+};
 
+specify($statement = "Can get a dynamic property", function () use($statement, $before) {
     /**
-     * @var DynamicProperty
+     * @var $dynamicPropClass DynamicProperty
      */
-    protected $dynamicPropClass;
+    $dynamicPropClass = $before();
+    verifyExt(
+        $statement . '<code>$dynamicPropClass->getDynamicProperty()</code>',
+        $dynamicPropClass->getDynamicProperty()
+    )->equals("bad")->e();
+});
 
-    /**
-     * @before
-     */
-    protected function _before()
-    {
-        $this->dynamicPropClass = new DynamicProperty();
-    }
-
-    /**
-     * @test
-     */
-    public function testCanGetADynamicProperty()
-    {
-        $this->specify("Can get a dynamic property", function () {
-            verify($this->dynamicPropClass->getDynamicProperty())->equals("bad");
-        });
-    }
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
 }

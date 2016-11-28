@@ -34,18 +34,29 @@ callBackAssertion(
     '$getClass()->isBool(false) === false'
 );
 
-specify($statement = "Should evaluate true as true", $eval = function () use ($getClass, $statement) {
-    printAssertion(verifyExt($statement . ' for the evaluated statement: <code>$getClass()->isTrue())->equals(true)</code>', $getClass()->isTrue())->equals(true));
+specify($statement = "Should evaluate true as true", function () use ($getClass, $statement) {
+    verifyExt(
+        $statement . ' <code>$getClass()->isTrue())->equals(true)</code>', $getClass()->isTrue()
+    )->equals(true)->e();
 
 });
 
-specify($statement = "Should evaluate false as false", $eval = function () use ($getClass, $statement) {
-    printAssertion(verifyExt($statement . ' for the evaluated statement: <code>$getClass()->isFalse())->equals(false)</code>', $getClass()->isFalse())->equals(false));
+specify($statement = "Should evaluate false as false", function () use ($getClass, $statement) {
+    verifyExt(
+        $statement . ' <code>$getClass()->isFalse())->equals(false)</code>',
+        $getClass()->isFalse()
+    )->equals(false)->e();
 });
 
-specify($statement = "Should evaluate the passed in boolean as a boolean", $eval = function () use ($getClass, $statement) {
-    printAssertion(verifyExt($statement . ' for the evaluated statement: <code>$getClass()->isBool(true))->equals(true)</code>', $getClass()->isBool(true))->equals(true));
-    printAssertion(verifyExt($statement . ' for the <code>$getClass()->isBool(false))->equals(false)</code>', $getClass()->isBool(false))->equals(false));
+specify($statement = "Should evaluate the passed in boolean as a boolean", function () use ($getClass, $statement) {
+    verifyExt(
+        $statement . ' <code>$getClass()->isBool(true))->equals(true)</code>',
+        $getClass()->isBool(true)
+    )->equals(true)->e();
+    verifyExt(
+        $statement . ' <code>$getClass()->isBool(false))->equals(false)</code>',
+        $getClass()->isBool(false)
+    )->equals(false)->e();
 });
 
 if (!isset($noInclude)) {

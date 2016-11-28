@@ -2,9 +2,10 @@
 
 namespace ChapterSix;
 
-
 use Codeception\Specify;
 use Oopphp\ChapterSix\ToString;
+
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * Class ToStringTest
@@ -36,4 +37,8 @@ class ToStringTest extends \Codeception\Test\Unit
             verify(strval($this->toStringClass))->equals("test string");
         });
     }
+}
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
 }

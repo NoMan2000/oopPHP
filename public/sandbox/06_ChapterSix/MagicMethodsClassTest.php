@@ -1,11 +1,12 @@
 <?php
 namespace ChapterSix;
 
-
 use Codeception\Specify;
 use Oopphp\ChapterSix\MagicMethodsClass;
 use stdClass;
 use InvalidArgumentException;
+
+require_once __DIR__ . '/../../bootstrap.php';
 
 /**
  * Class MagicMethodsClassTest
@@ -143,4 +144,8 @@ class MagicMethodsClassTest extends \Codeception\Test\Unit
             verify($value)->contains('thing');
         });
     }
+}
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
 }

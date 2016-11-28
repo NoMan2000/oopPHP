@@ -35,57 +35,56 @@ $before = function () {
 };
 
 
-specify($statement = "Can add a variable range of numbers and return an integer", $eval = function () use ($before, $statement) {
-
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalc->addInt("25"))->equals(25)</code>',
+specify($statement = "Can add a variable range of numbers and return an integer", function () use ($before, $statement) {
+    verifyExt(
+        $statement . '  <code>$before()->addCalc->addInt("25"))->equals(25)</code>',
         $before()->addCalc->addInt('25')
-    )->equals(25));
+    )->equals(25)->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalc->addInt(25, 10, 33)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalc->addInt(25, 10, 33)</code>',
         $before()->addCalc->addInt(25, 10, 33)
-    )->equals(68));
+    )->equals(68);
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalc->addInt(10, -10)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalc->addInt(10, -10)</code>',
         $before()->addCalc->addInt(10, -10)
-    )->equals(0));
+    )->equals(0)->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalc->addInt(10.5, 1.2)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalc->addInt(10.5, 1.2)</code>',
         $before()->addCalc->addInt(10.5, 1.2)
-    )->equals(11));
+    )->equals(11)->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalc->addInt(2.2)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalc->addInt(2.2)</code>',
         $before()->addCalc->addInt(2.2)
-    )->internalType('integer'));
+    )->internalType('integer')->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalcDiff->addInt("25")</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalcDiff->addInt("25")</code>',
         $before()->addCalcDiff->addInt('25')
-    )->equals(25));
+    )->equals(25)->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalcDiff->addInt(25, 10, 33)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalcDiff->addInt(25, 10, 33)</code>',
         $before()->addCalcDiff->addInt(25, 10, 33)
-    )->equals(68));
+    )->equals(68)->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalcDiff->addInt(10, -10)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalcDiff->addInt(10, -10)</code>',
         $before()->addCalcDiff->addInt(10, -10)
-    )->equals(0));
+    )->equals(0)->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalcDiff->addInt(10.5, 1.2)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalcDiff->addInt(10.5, 1.2)</code>',
         $before()->addCalcDiff->addInt(10.5, 1.2)
-    )->equals(11));
+    )->equals(11)->e();
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$before()->addCalcDiff->addInt(2.2)</code>',
+    verifyExt(
+        $statement . ' <code>$before()->addCalcDiff->addInt(2.2)</code>',
         $before()->addCalcDiff->addInt(2.2)
-    )->internalType('integer'));
+    )->internalType('integer')->e();
 });
 
 if (!isset($noInclude)) {

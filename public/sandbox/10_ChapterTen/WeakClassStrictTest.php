@@ -98,3 +98,7 @@ class WeakClassStrictTest extends WeakClassNonStrictTest
     }
 
 }
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
+}

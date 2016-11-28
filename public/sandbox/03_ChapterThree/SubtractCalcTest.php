@@ -6,61 +6,133 @@ use Oopphp\ChapterThree\AddCalc;
 use Oopphp\ChapterThree\AddCalcDiff;
 use Oopphp\ChapterThree\SubtractCalc;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Subtract Calc Test";
+require_once __DIR__ . '/../partials/header.php';
+
 /**
- * Class SubtractCalcTest
- * @package ChapterThree
+ * @return object
  */
-class SubtractCalcTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function () {
+    return new class {
+        /**
+         * @var SubtractCalc
+         */
+        public $subtractCalc;
+
+        /**
+         * @var SubtractCalc
+         */
+        public $subtractCalcDiff;
+
+        /**
+         *  constructor.
+         */
+        public function __construct()
+        {
+            $this->subtractCalc = new SubtractCalc(new AddCalc());
+            $this->subtractCalcDiff = new SubtractCalc(new AddCalcDiff());
+        }
+    };
+};
+
+specify($statement = "Can subtract a list of numbers and return an integer, even if floating point numbers given", function () use ($statement, $before) {
+    $class = $before();
     /**
-     * @var SubtractCalc
+     * @var $subtractCalc SubtractCalc
      */
-    protected $subtractCalc;
-
+    $subtractCalc = $class->subtractCalc;
     /**
-     * @var SubtractCalc
+     * @var $subtractCalcDiff SubtractCalc
      */
-    protected $subtractCalcDiff;
+    $subtractCalcDiff = $class->subtractCalcDiff;
+    verifyExt(
+        $statement . ' <code>$subtractCalc->subtractInt(1, 2, 3)</code>',
+        $subtractCalc->subtractInt(1, 2, 3)
+    )->equals(-6)->e();
 
+    verifyExt(
+        $statement . ' <code>$subtractCalc->subtractInt(2.2, 2, 2)</code>',
+        $subtractCalc->subtractInt(2.2, 2, 2)
+    )->equals(-6)->e();
+
+    verifyExt(
+        $statement . ' <code>$subtractCalcDiff->subtractInt(1, 2, 3))->equals(-6)</code>',
+        $subtractCalcDiff->subtractInt(1, 2, 3))->equals(-6)->e();
+
+    verifyExt(
+        $statement . ' <code>$subtractCalcDiff->subtractInt(2.2, 2, 2)</code>',
+        $subtractCalcDiff->subtractInt(2.2, 2, 2)
+    )->equals(-6)->e();
+});
+
+specify($statement = "Can subtract a list of numbers and return a float", function () use ($before, $statement) {
+    $class = $before();
     /**
-     * @before
+     * @var $subtractCalc SubtractCalc
      */
-    protected function _before()
-    {
-        $this->subtractCalc = new SubtractCalc(new AddCalc());
-        $this->subtractCalcDiff = new SubtractCalc(new AddCalcDiff());
-    }
-
+    $subtractCalc = $class->subtractCalc;
     /**
-     * @test
+     * @var $subtractCalcDiff SubtractCalc
      */
-    public function testCanDelegateTasksToAnotherObjectAndImplementAnInterface()
-    {
-        $this->specify("Can subtract a list of numbers and return an integer, even if floating point numbers given", function () {
-            verify($this->subtractCalc->subtractInt(1, 2, 3))->equals(-6);
-            verify($this->subtractCalc->subtractInt(2.2, 2, 2))->equals(-6);
+    $subtractCalcDiff = $class->subtractCalcDiff;
 
-            verify($this->subtractCalcDiff->subtractInt(1, 2, 3))->equals(-6);
-            verify($this->subtractCalcDiff->subtractInt(2.2, 2, 2))->equals(-6);
-        });
+    verifyExt(
+        $statement . ' <code>$subtractCalc->subtractFloat(1, 2.2)</code>',
+        $subtractCalc->subtractFloat(1, 2.2)
+    )->equals(-3.2)->e();
 
-        $this->specify("Can subtract a list of numbers and return a float", function () {
-            verify($this->subtractCalc->subtractFloat(1, 2.2))->equals(-3.2);
-            verify($this->subtractCalcDiff->subtractFloat(1, 2.2))->equals(-3.2);
-        });
+    verifyExt(
+        $statement . ' <code>$subtractCalcDiff->subtractFloat(1, 2.2)</code>',
+        $subtractCalcDiff->subtractFloat(1, 2.2)
+    )->equals(-3.2)->e();
+});
 
-        $this->specify("Can add a list of numbers and return an integer", function () {
-            verify($this->subtractCalc->addInt(1, 2, 3, 4))->equals(10);
-            verify($this->subtractCalcDiff->addInt(1, 2, 3, 4))->equals(10);
-        });
+specify($statement = "Can add a list of numbers and return an integer", function () use ($before, $statement) {
+    $class = $before();
+    /**
+     * @var $subtractCalc SubtractCalc
+     */
+    $subtractCalc = $class->subtractCalc;
+    /**
+     * @var $subtractCalcDiff SubtractCalc
+     */
+    $subtractCalcDiff = $class->subtractCalcDiff;
 
-        $this->specify("Can add a list of numbers and return a float", function () {
-            verify($this->subtractCalc->addFloat(1, 2, 3, 4.1))->equals(10.1);
-            verify($this->subtractCalcDiff->addFloat(1, 2, 3, 4.1))->equals(10.1);
-        });
+    verifyExt(
+        $statement . ' <code>$subtractCalc->addInt(1, 2, 3, 4)</code>',
+        $subtractCalc->addInt(1, 2, 3, 4)
+    )->equals(10)->e();
 
-    }
+    verifyExt(
+        $statement . ' <code>$subtractCalcDiff->addInt(1, 2, 3, 4)</code>',
+        $subtractCalcDiff->addInt(1, 2, 3, 4)
+    )->equals(10)->e();
+});
 
+specify($statement = "Can add a list of numbers and return a float", function () use ($before, $statement) {
+    $class = $before();
+    /**
+     * @var $subtractCalc SubtractCalc
+     */
+    $subtractCalc = $class->subtractCalc;
+    /**
+     * @var $subtractCalcDiff SubtractCalc
+     */
+    $subtractCalcDiff = $class->subtractCalcDiff;
 
+    verifyExt(
+        $statement . ' <code>$subtractCalc->addFloat(1, 2, 3, 4.1)</code>',
+        $subtractCalc->addFloat(1, 2, 3, 4.1)
+    )->equals(10.1)->e();
+
+    verifyExt(
+        $statement . ' <code>$subtractCalcDiff->addFloat(1, 2, 3, 4.1)</code>',
+        $subtractCalcDiff->addFloat(1, 2, 3, 4.1)
+    )->equals(10.1)->e();
+
+});
+
+if (!isset($noInclude)) {
+    require_once __DIR__ . '/../partials/footer.php';
 }

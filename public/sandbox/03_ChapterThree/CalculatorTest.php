@@ -15,24 +15,24 @@ $before = function () {
     return new Calculator(new SubtractCalc(new AddCalc()));
 };
 
-specify($statement = "Given a negation operator, can perform integer subtractions", $exec = function () use ($before, $statement) {
+specify($statement = "Given a negation operator, can perform integer subtractions", function () use ($before, $statement) {
     /**
      * @var $calc OperationContract
      */
     $calc = $before();
     $result = $calc->calc('-', $calc::INT, 1, 2, 3, 4, 5, 6, 7);
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$calc->calc("-", $calc::INT, 1, 2, 3, 4, 5, 6, 7)</code>',
+    verifyExt(
+        $statement . ' <code>$calc->calc("-", $calc::INT, 1, 2, 3, 4, 5, 6, 7)</code>',
         $result
-    )->equals(-28));
+    )->equals(-28)->e();
 
     $resultTwo = $calc->calc('-', $calc::INT, 1, 2, 3, 4, 5, 6, 7.2);
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$calc->calc("-", $calc::INT, 1, 2, 3, 4, 5, 6, 7.2)</code>',
+    verifyExt(
+        $statement . ' <code>$calc->calc("-", $calc::INT, 1, 2, 3, 4, 5, 6, 7.2)</code>',
         $resultTwo
-    )->equals(-28));
+    )->equals(-28)->e();
 });
 
 specify($statement = "Given a negation operator, can perform floating point subtraction", function () use ($statement, $before) {
@@ -43,17 +43,17 @@ specify($statement = "Given a negation operator, can perform floating point subt
 
     $result = $calc->calc("-", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7);
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$calc->calc("-", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7)</code>',
+    verifyExt(
+        $statement . ' <code>$calc->calc("-", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7)</code>',
         $result
-    )->equals(-28), true);
+    )->equals(-28)->e(true);
 
     $resultTwo = $calc->calc("-", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7.2);
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$calc->calc("-", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7.2)</code>',
+    verifyExt(
+        $statement . ' <code>$calc->calc("-", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7.2)</code>',
         $resultTwo
-    )->equals(-28.2));
+    )->equals(-28.2)->e();
 });
 
 specify($statement = "Given an addition operator, can perform integer additions", $exec = function () use ($before, $statement) {
@@ -63,17 +63,17 @@ specify($statement = "Given an addition operator, can perform integer additions"
     $calc = $before();
     $result = $calc->calc("+", $calc::INT, 1, 2, 3, 4, 5, 6, 7);
 
-    printAssertion(verifyExt(
+    verifyExt(
         $statement . ' for the evaluated statement: <code>$calc->calc("+", $calc::INT, 1, 2, 3, 4, 5, 6, 7)</code>',
         $result
-    )->equals(28));
+    )->equals(28)->e();
 
     $resultTwo = $calc->calc("+", $calc::INT, 1, 2, 3, 4, 5, 6, 7.2);
 
-    printAssertion(verifyExt(
+    verifyExt(
         $statement . ' for the evaluated statement: <code>$calc->calc("+", $calc::INT, 1, 2, 3, 4, 5, 6, 7.2)</code>',
         $resultTwo
-    )->equals(28));
+    )->equals(28)->e();
 });
 
 specify($statement = "Given an addition operator, can perform floating point additions", $exec = function () use ($statement, $before) {
@@ -82,17 +82,17 @@ specify($statement = "Given an addition operator, can perform floating point add
      */
     $calc = $before();
     $result = $calc->calc("+", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7);
-    printAssertion(verifyExt(
+    verifyExt(
         $statement . ' for the evaluated statement: <code>$calc->calc("+", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7)</code>',
         $result
-    )->equals(28), true);
+    )->equals(28)->e(true);
 
     $resultTwo = $calc->calc("+", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7.2);
 
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$calc->calc("+", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7.2)</code>',
+    verifyExt(
+        $statement . ' <code>$calc->calc("+", $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7.2)</code>',
         $resultTwo
-    )->equals(28.2));
+    )->equals(28.2)->e();
 });
 
 specify($statement = "Will throw an Exception if the operation asked is not known", $exec = function () use ($statement, $before) {
@@ -103,13 +103,13 @@ specify($statement = "Will throw an Exception if the operation asked is not know
     $badMethod = function () use ($calc) {
         return $calc->calc('*', $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7);
     };
-    printAssertion(verifyExt(
-        $statement . ' for the evaluated statement: <code>$calc->calc(\'*\', $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7)</code>',
+    verifyExt(
+        $statement . ' <code>$calc->calc(\'*\', $calc::FLOAT, 1, 2, 3, 4, 5, 6, 7)</code>',
         $badMethod
-    )->expectException(InvalidArgumentException::class));
+    )->expectException(InvalidArgumentException::class)->e();
 });
 
-specify($statement = "Will throw an Exception if the return type is not known", $exec = function () use ($before, $statement) {
+specify($statement = "Will throw an Exception if the return type is not known", function () use ($before, $statement) {
     /**
      * @var $calc OperationContract
      */
@@ -117,15 +117,15 @@ specify($statement = "Will throw an Exception if the return type is not known", 
     $badMethod = function () use ($calc) {
         $calc->calc('+', 2, 1, 2, 3, 4, 5, 6, 7);
     };
-    printAssertion(verifyExt(
+    verifyExt(
         $statement . ' for the evaluated statement: <code>$calc->calc(\'+\', 2, 1, 2, 3, 4, 5, 6, 7)</code>',
         $badMethod
-    )->expectException(InvalidArgumentException::class));
+    )->expectException(InvalidArgumentException::class)->e();
 
 });
 
 
-specify($statement = "Will throw an Exception if the return type is not known", $exec = function () use ($statement, $before) {
+specify($statement = "Will throw an Exception if the return type is not known", function () use ($statement, $before) {
     /**
      * @var $calc OperationContract
      */
@@ -133,10 +133,10 @@ specify($statement = "Will throw an Exception if the return type is not known", 
     $badMethod = function () use ($calc) {
         $calc->calc('-', 2, 1, 2, 3, 4, 5, 6, 7);
     };
-    printAssertion(verifyExt(
+    verifyExt(
         $statement . ' for the evaluated statement: <code>$calc->calc(\'-\', 2, 1, 2, 3, 4, 5, 6, 7)</code>',
         $badMethod
-    )->expectException(InvalidArgumentException::class));
+    )->expectException(InvalidArgumentException::class)->e();
 });
 
 if (!isset($noInclude)) {
