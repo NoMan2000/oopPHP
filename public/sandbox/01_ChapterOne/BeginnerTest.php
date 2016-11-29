@@ -6,6 +6,8 @@ require_once __DIR__ . '/../partials/header.php';
 
 use Oopphp\ChapterOne\Beginner;
 
+echo "<h2 class='page-header'>Testing Beginner</h2>";
+
 /**
  * @return Beginner
  */

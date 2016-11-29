@@ -10,6 +10,7 @@ require_once __DIR__ . '/../../bootstrap.php';
 $title = "Tests for " . __FILE__;
 require_once __DIR__ . '/../partials/header.php';
 
+echo "<h2 class='page-header'>Testing MagicMethodsClass</h2>";
 /**
  * @return MagicMethodsClass
  * @before
@@ -38,6 +39,7 @@ specify($statement = "Will call the items passed in the constructor", function (
     )->equals("invoked")->e();
 
     verifyExt(
+        $statement . '<code>$magicMethodsClass->funcArgs(\'random arg\')</code>',
         $magicMethodsClass->funcArgs('random arg')
     )->equals('random arg')->e();
 });
@@ -91,14 +93,28 @@ specify($statement = "A property can be dynamically set and get", function () us
      */
     $magicMethodsClass = $before();
     $magicMethodsClass->dynamic = "dynamic prop";
+
     verifyExt(
-        $statement . '<code></code>',
+        $statement . '<code>$magicMethodsClass->dynamic</code>',
         $magicMethodsClass->dynamic
     )->equals('dynamic prop')->e();
-    verifyExt(isset($magicMethodsClass->dynamic))->equals(true)->e();
-    verifyExt(isset($magicMethodsClass->nonexistant))->equals(false)->e();
+
+    verifyExt(
+        $statement . '<code>isset($magicMethodsClass->dynamic)</code>',
+        isset($magicMethodsClass->dynamic)
+    )->equals(true)->e();
+
+    verifyExt(
+        $statement . '<code>isset($magicMethodsClass->nonexistant)</code>',
+        isset($magicMethodsClass->nonexistant)
+    )->equals(false)->e();
+
     unset($magicMethodsClass->dynamic);
-    verifyExt(isset($magicMethodsClass->dynamic))->equals(false)->e();
+
+    verifyExt(
+        $statement . '<code>unset($magicMethodsClass->dynamic);isset($magicMethodsClass->dynamic)</code>',
+        isset($magicMethodsClass->dynamic)
+    )->equals(false)->e();
 });
 
 
@@ -108,12 +124,25 @@ specify($statement = "The __sleep and __wakeup methods will be invoked when seri
      */
     $magicMethodsClass = $before();
     $connectionItemsStart = $magicMethodsClass->getConnectionItems();
-    verifyExt($connectionItemsStart)->isEmpty()->e();
+
+    verifyExt(
+        $statement . '<code>$connectionItemsStart</code>',
+        $connectionItemsStart
+    )->isEmpty()->e();
+
     $stringValues = serialize($magicMethodsClass);
     $arrayValues = (array) unserialize($stringValues); // Note that protected and private properties will have special characters
     $classValues = unserialize($stringValues);
-    verifyExt($arrayValues['thing'])->equals(1)->e();
-    verifyExt($classValues->thing)->equals(1)->e();
+
+    verifyExt(
+        $statement . '<code>$arrayValues[\'thing\']</code>',
+        $arrayValues['thing']
+    )->equals(1)->e();
+
+    verifyExt(
+        $statement . '<code>$classValues->thing</code>',
+        $classValues->thing
+    )->equals(1)->e();
 });
 
 
@@ -123,7 +152,9 @@ specify($statement = "Will return the classname when cast into a string", functi
      * @var $magicMethodsClass MagicMethodsClass
      */
     $magicMethodsClass = $before();
-    verifyExt(strval($magicMethodsClass))->equals(MagicMethodsClass::class);
+    verifyExt(
+        strval($magicMethodsClass)
+    )->equals(MagicMethodsClass::class);
 });
 
 
@@ -136,7 +167,10 @@ specify($statement = "Can invoke an object", function () use($before, $statement
         return 'function';
     };
     $class = $magicMethodsClass;
-    verify($class($function))->equals('function');
+    verifyExt(
+        $statement . '<code>$class($function)</code>',
+        $class($function)
+    )->equals('function');
 });
 
 
@@ -146,7 +180,10 @@ specify($statement = "Can get an object with var_export and return set to true",
      */
     $magicMethodsClass = $before();
     $value = var_export($magicMethodsClass, true);
-    verify($value)->contains('thing');
+    verifyExt(
+        $statement . '<code>$value</code>',
+        $value
+    )->contains('thing');
 });
 
 

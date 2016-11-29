@@ -9,37 +9,26 @@ require_once __DIR__ . '/../../bootstrap.php';
 $title = "Tests for " . __FILE__;
 require_once __DIR__ . '/../partials/header.php';
 
+
 /**
- * Class ToStringTest
- * @package ChapterSix
+ * @return ToString
  */
-class ToStringTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function() {
+    return new ToString();
+};
 
+specify($statement = "Casting an object as a string will return the __toString method", function () use($statement, $before) {
     /**
-     * @var ToString
+     * @var $toStringClass ToString
      */
-    protected $toStringClass;
+    $toStringClass = $before();
+    verifyExt(
+        $statement . '<code>$this->toStringClass</code>',
+        strval($toStringClass)
+    )->equals("test string")->e();
+});
 
-    /**
-     * @before
-     */
-    protected function _before()
-    {
-        $this->toStringClass = new ToString();
-    }
 
-    /**
-     * @test
-     */
-    public function testCanCastObjectToAStringRepresentation()
-    {
-        $this->specify("Casting an object as a string will return the __toString method", function () {
-            verify(strval($this->toStringClass))->equals("test string");
-        });
-    }
-}
 
 if (!isset($noInclude)) {
     require_once __DIR__ . '/../partials/footer.php';

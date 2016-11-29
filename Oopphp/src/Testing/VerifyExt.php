@@ -105,9 +105,10 @@ class VerifyExt extends Verify
     public function contains($needle)
     {
         parent::contains($needle);
+        $needle = preg_quote($needle);
         $this->returnArray = [
-            'expected' => $needle,
-            'actual' => $this->actual,
+            'expected' => preg_match("/{$needle}/", $this->actual),
+            'actual' => preg_match("/{$needle}/", $this->actual),
             'description' => $this->description
         ];
         return $this;
@@ -119,9 +120,10 @@ class VerifyExt extends Verify
     public function notContains($needle)
     {
         parent::notContains($needle);
+        $needle = preg_quote($needle);
         $this->returnArray = [
-            'expected' => $needle,
-            'actual' => $this->actual,
+            'expected' => !preg_match("/{$needle}/", $this->actual),
+            'actual' => !preg_match("/{$needle}/", $this->actual),
             'description' => $this->description
         ];
         return $this;

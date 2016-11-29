@@ -8,80 +8,59 @@ require_once __DIR__ . '/../../bootstrap.php';
 $title = "Tests for " . __FILE__;
 require_once __DIR__ . '/../partials/header.php';
 
+
 /**
- * Class AuthTest
- * @package 8_ChapterEight
+ * @return Auth
  */
-class AuthTest extends \Codeception\Test\Unit
-{
-    use Specify;
-
-    /**
-     * @var Auth
-     */
-    protected $authClass;
-
-    /**
-     * Check if the file exists and empty it out.
-     * @before
-     */
-    protected function _before()
-    {
-        $this->authClass = new Auth();
-        $logFile = $this->authClass->getFileLocation();
-        $logFileExists = file_exists($logFile);
-        if ($logFileExists) {
-            file_put_contents($logFile, '');
-        }
-        if (!$logFileExists) {
-            touch($logFile);
-        }
+$before = function() {
+    $auth = new Auth();
+    $logFile = $auth->getFileLocation();
+    $logFileExists = file_exists($logFile);
+    if ($logFileExists) {
+        file_put_contents($logFile, '');
     }
-
-    public function _after()
-    {
-        parent::_after();
+    if (!$logFileExists) {
+        touch($logFile);
     }
+    return $auth;
+};
 
+
+specify($statement = "Can output a successful login", function () use($statement, $before) {
     /**
-     * @test
+     * @var $authClass Auth
      */
-    public function testCanLogOnSuccessfulLogin()
-    {
-        $this->specify("Can output a successful login", function () {
-            $this->authClass->successAuth(122);
-            $fileLocation = $this->authClass->getFileLocation();
-            $contents = file_get_contents($fileLocation);
-            verify($contents)->contains('122');
-        });
-    }
+    $authClass = $before();
+    $authClass->successAuth(122);
+    $fileLocation = $authClass->getFileLocation();
+    $contents = file_get_contents($fileLocation);
+    verifyExt($contents)->contains('122')->e();
+});
 
-    /**
-     * @test
-     */
-    public function testCanLogOnFailedLogin()
-    {
-        $this->specify("Can output a failed login", function () {
-            $this->authClass->failAuth(122);
-            $fileLocation = $this->authClass->getFileLocation();
-            $contents = file_get_contents($fileLocation);
-            verify($contents)->contains('122');
-        });
-    }
 
+specify($statement = "Can output a failed login", function () use ($before, $statement) {
     /**
-     * @test
+     * @var $authClass Auth
      */
-    public function testCanSetFileLocation()
-    {
-        $this->specify("Can set File Location", function () {
-            $fileLocation = $this->authClass->getFileLocation();
-            $this->authClass->setFileLocation($fileLocation);
-            $newFileLocation = $this->authClass->getFileLocation();
-            verify($newFileLocation)->equals($fileLocation);
-        });
-    }
-}
+    $authClass = $before();
+    $authClass->failAuth(122);
+    $fileLocation = $authClass->getFileLocation();
+    $contents = file_get_contents($fileLocation);
+    verifyExt($contents)->contains('122')->e();
+});
+
+
+specify($statement = "Can set File Location", function () use ($before, $statement) {
+    /**
+     * @var $authClass Auth
+     */
+    $authClass = $before();
+    $fileLocation = $authClass->getFileLocation();
+    $authClass->setFileLocation($fileLocation);
+    $newFileLocation = $authClass->getFileLocation();
+    verifyExt($newFileLocation)->equals($fileLocation)->e();
+});
+
 
 if (!isset($noInclude)) {
     require_once __DIR__ . '/../partials/footer.php';

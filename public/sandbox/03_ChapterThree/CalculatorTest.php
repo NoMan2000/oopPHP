@@ -8,6 +8,9 @@ use Oopphp\Contracts\OperationContract;
 require_once __DIR__ . '/../../bootstrap.php';
 $title = "Test Calculator Class";
 require_once __DIR__ . '/../partials/header.php';
+
+echo "<h2 class='page-header'>Testing Calculator</h2>";
+
 /**
  * @return Calculator
  */

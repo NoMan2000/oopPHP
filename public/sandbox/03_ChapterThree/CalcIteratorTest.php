@@ -6,6 +6,9 @@ use Oopphp\Contracts\OperationContract;
 require_once __DIR__ . '/../../bootstrap.php';
 $title = 'Calc Iterator Test';
 require_once __DIR__ . '/../partials/header.php';
+
+echo "<h2 class='page-header'>Testing CalcIterator</h2>";
+
 /**
  * @return CalcIterator
  */

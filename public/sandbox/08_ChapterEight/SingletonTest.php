@@ -11,7 +11,10 @@ require_once __DIR__ . '/../partials/header.php';
 specify($statement = "A singleton class is always equal to itself", function () use ($statement) {
     $singletonOne = Singleton::getInstance();
     $singletonTwo = Singleton::getInstance();
-    verifyExt($singletonOne)->equals($singletonTwo)->e();
+    verifyExt(
+        $statement . '<code>$singletonTwo === $singletonOne</code>',
+        $singletonOne
+    )->equals($singletonTwo)->e();
 });
 
 if (!isset($noInclude)) {

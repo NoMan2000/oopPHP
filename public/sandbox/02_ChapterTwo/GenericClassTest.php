@@ -5,6 +5,9 @@ require_once __DIR__ . '/../../bootstrap.php';
 use Oopphp\ChapterTwo\GenericClass;
 $title = "Generic Class Test";
 require_once __DIR__ . '/../partials/header.php';
+
+echo "<h2 class='page-header'>Testing GenericClass</h2>";
+
 /**
  * @return GenericClass
  */

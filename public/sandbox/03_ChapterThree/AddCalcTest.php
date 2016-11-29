@@ -5,6 +5,8 @@ require_once __DIR__ . '/../../bootstrap.php';
 use Oopphp\ChapterThree\AddCalc;
 use Oopphp\ChapterThree\AddCalcDiff;
 
+echo "<h2 class='page-header'>Testing AddCalc and AddCalcDiff</h2>";
+
 $title = 'Add Calc Test';
 require_once __DIR__ . '/../partials/header.php';
 

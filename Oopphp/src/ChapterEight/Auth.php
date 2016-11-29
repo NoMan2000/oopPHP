@@ -48,7 +48,7 @@ class Auth implements LoggerInterface, LoggerAwareInterface
         string $fileLocation = __DIR__ . '/../../../logs/auth.log',
         $whenToLogLevel = Logger::DEBUG
     ) {
-        $this->fileLocation = $fileLocation;
+        $this->fileLocation = realpath($fileLocation);
         $this->logger = $logger ?: (new Logger('auth'))->pushHandler(new StreamHandler($fileLocation, $whenToLogLevel));
     }
 
