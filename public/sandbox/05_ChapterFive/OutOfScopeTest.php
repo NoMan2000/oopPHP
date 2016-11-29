@@ -17,9 +17,17 @@ $before = function() {
 
 specify($statement = "Can get and set a value dynamically", function () use ($statement, $before) {
     $outOfScopeClass = $before();
-    verifyExt($outOfScopeClass->foo)->equals(null)->e();
+    verifyExt(
+        $statement . '<code>$outOfScopeClass->foo</code>',
+        $outOfScopeClass->foo
+    )->equals(null)->e();
+
     $outOfScopeClass->foo = "bar";
-    verifyExt($outOfScopeClass->foo)->equals("bar")->e();
+
+    verifyExt(
+        $statement . '<code>$outOfScopeClass->foo</code>',
+        $outOfScopeClass->foo
+    )->equals("bar")->e();
 });
 
 

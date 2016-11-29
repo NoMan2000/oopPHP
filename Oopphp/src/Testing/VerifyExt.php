@@ -20,6 +20,7 @@ use PHPUnit_Framework_Constraint;
 use PHPUnit_Framework_Assert as a;
 
 /**
+ * Note that most of these assertions have not been checked
  * Class VerifyExt
  * @package Oopphp\Testing
  */
@@ -244,9 +245,10 @@ class VerifyExt extends Verify
     public function isEmpty()
     {
         parent::isEmpty();
+
         $this->returnArray = [
-            'expected' => null,
-            'actual' => $this->actual,
+            'expected' => empty($this->actual),
+            'actual' => empty($this->actual),
             'description' => $this->description
         ];
         return $this;
@@ -259,8 +261,8 @@ class VerifyExt extends Verify
     {
         parent::notEmpty();
         $this->returnArray = [
-            'expected' => null,
-            'actual' => $this->actual,
+            'expected' => !empty($this->actual),
+            'actual' => !empty($this->actual),
             'description' => $this->description
         ];
         return $this;
