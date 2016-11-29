@@ -7,6 +7,9 @@ require_once __DIR__ . '/WeakClassNonStrictTest.php';
 
 use TypeError;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Tests for " . __FILE__;
+require_once __DIR__ . '/../partials/header.php';
 
 /**
  * Class WeakClassStrictTest

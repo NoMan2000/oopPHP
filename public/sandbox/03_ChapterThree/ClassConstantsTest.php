@@ -1,10 +1,10 @@
 <?php
 
-require_once __DIR__ . '/../../bootstrap.php';
 
 use Oopphp\ChapterThree\ClassConstantOne;
 use Oopphp\ChapterThree\ClassConstantTwo;
 
+require_once __DIR__ . '/../../bootstrap.php';
 $title = "Class Constants Test";
 require_once __DIR__ . '/../partials/header.php';
 

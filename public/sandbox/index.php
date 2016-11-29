@@ -25,7 +25,8 @@ usort($fileList, 'strnatcmp');
 foreach ($fileList as $file) {
     $file = new SplFileInfo($file);
     $fileName = $file->getBasename();
-    if ($fileName === 'index.php') {
+    $isIndex = $fileName === 'index.php';
+    if (!$isIndex) {
         continue;
     }
     $parentFolder = $file->getPath();

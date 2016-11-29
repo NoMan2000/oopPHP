@@ -5,10 +5,6 @@ use Oopphp\Testing\VerifyExt;
 require_once __DIR__ . '/../../../vendor/autoload.php';
 
 spl_autoload_register(
-/**
- * @param $className
- * @return mixed
- */
     function ($className) {
         $file = str_replace('\\', '/', $className) . '.php';
         $classLocation = __DIR__ . "/../../unit/$file";
@@ -160,7 +156,7 @@ if (!function_exists('verifyExt')) {
 
     /**
      * @param $truth
-     * @return array|void
+     * @return VerifyExt
      */
     function verify_thatExt($truth) {
         return verifyExt($truth)->notEmpty();
@@ -168,7 +164,7 @@ if (!function_exists('verifyExt')) {
 
     /**
      * @param $fallacy
-     * @return array|void
+     * @return VerifyExt
      */
     function verify_notExt($fallacy) {
         return verifyExt($fallacy)->isEmpty();
@@ -188,7 +184,7 @@ if (!function_exists('expectExt')) {
 
     /**
      * @param $truth
-     * @return array|void
+     * @return VerifyExt
      */
     function expect_thatExt($truth) {
         return expectExt($truth)->notEmpty();
@@ -196,7 +192,7 @@ if (!function_exists('expectExt')) {
 
     /**
      * @param $fallacy
-     * @return array|void
+     * @return VerifyExt
      */
     function expect_notExt($fallacy) {
         return expectExt($fallacy)->isEmpty();
@@ -239,7 +235,6 @@ if (!function_exists('test_generator')) {
     function test_generator(string $file, string $directory, bool $noInclude = false)
     {
         $directoryInfo = new SplFileInfo($file);
-
         $title = "All Tests for " . $directoryInfo->getPathname();
         if (!$noInclude) {
             require_once __DIR__ . '/../partials/header.php';

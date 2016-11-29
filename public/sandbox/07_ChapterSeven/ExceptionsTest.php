@@ -5,6 +5,8 @@ use Codeception\Specify;
 use Oopphp\Exceptions\ErrorExceptionHandler;
 
 require_once __DIR__ . '/../../bootstrap.php';
+$title = "Tests for " . __FILE__;
+require_once __DIR__ . '/../partials/header.php';
 
 /**
  * Class ExceptionsTest

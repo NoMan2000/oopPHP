@@ -1,10 +1,14 @@
 <?php
 namespace ChapterTen;
 
-
 use Codeception\Specify;
 use Oopphp\ChaperTen\StaticSelf;
 use Oopphp\ChaperTen\StaticSelfChild;
+
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Tests for " . __FILE__;
+require_once __DIR__ . '/../partials/header.php';
+
 
 /**
  * Class StaticSelfTest

@@ -1,13 +1,12 @@
 <?php
 namespace ChapterFive;
 
-require_once __DIR__ . '/../../bootstrap.php';
-$title = "Out of Scope Test";
-require_once __DIR__ . '/../partials/header.php';
-
 use Codeception\Specify;
 use Oopphp\ChapterFive\OutOfScopeReference;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Out of Scope Test";
+require_once __DIR__ . '/../partials/header.php';
 /**
  * @return OutOfScopeReference
  */

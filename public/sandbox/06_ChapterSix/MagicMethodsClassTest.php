@@ -7,144 +7,126 @@ use stdClass;
 use InvalidArgumentException;
 
 require_once __DIR__ . '/../../bootstrap.php';
+$title = "Tests for " . __FILE__;
+require_once __DIR__ . '/../partials/header.php';
 
 /**
- * Class MagicMethodsClassTest
- * @package ChapterSix
+ * @return MagicMethodsClass
+ * @before
  */
-class MagicMethodsClassTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function() {
+    $items = new stdClass();
+    $items->func = function () {
+        return "invoked";
+    };
+    $items->funcArgs = function ($value) {
+        return $value;
+    };
+    $items->prop = "prop";
+    return new MagicMethodsClass($items);
+};
 
+specify($statement = "Will call the items passed in the constructor", function () use($statement, $before) {
     /**
-     * @var MagicMethodsClass
+     * @var $magicMethodsClass MagicMethodsClass
      */
-    protected $magicMethodsClass;
+    $magicMethodsClass = $before();
+    verifyExt(
+        $statement . '<code>$magicMethodsClass->func()</code>',
+        $magicMethodsClass->func()
+    )->equals("invoked")->e();
 
+    verifyExt(
+        $magicMethodsClass->funcArgs('random arg')
+    )->equals('random arg')->e();
+});
+
+
+specify($statement = "Will throw an exception on an invalid argument", function () use($before, $statement) {
     /**
-     * @before
+     * @var $magicMethodsClass MagicMethodsClass
      */
-    protected function _before()
-    {
-        $items = new stdClass();
-        $items->func = function () {
-            return "invoked";
+    $magicMethodsClass = $before();
+    verifyExt(
+        $statement . ' <code>$magicMethodsClass->nonExistantFunc()</code> ',
+        $magicMethodsClass->nonExistantFunc()
+    )->isInstanceOf(InvalidArgumentException::class)->e();
+});
+
+
+    specify($statement = "Can access a property passed in the constructor", function () use ($statement, $before) {
+        /**
+         * @var $magicMethodsClass MagicMethodsClass
+         */
+        $magicMethodsClass = $before();
+        verifyExt(
+            $statement . '<code>$magicMethodsClass->prop</code>',
+            $magicMethodsClass->prop
+        )->equals('prop')->e();
+    });
+
+
+    specify($statement = "A static call to the function can be made", function () use ($statement, $before) {
+        /**
+         * @var $magicMethodsClass MagicMethodsClass
+         */
+        $magicMethodsClass = $before();
+        verifyExt(
+            $statement . '<code>MagicMethodsClass::someFunc()</code>',
+            MagicMethodsClass::someFunc()
+        )->equals(MagicMethodsClass::class)->e();
+    });
+
+
+    specify($statement = "A property can be dynamically set and get", function () use ($statement, $before) {
+        /**
+         * @var $magicMethodsClass MagicMethodsClass
+         */
+        $magicMethodsClass = $before();
+        $magicMethodsClass->dynamic = "dynamic prop";
+        verifyExt(
+            $statement . '<code></code>',
+            $magicMethodsClass->dynamic
+        )->equals('dynamic prop')->e();
+        verifyExt(isset($magicMethodsClass->dynamic))->equals(true);
+        verifyExt(isset($magicMethodsClass->nonexistant))->equals(false);
+        unset($magicMethodsClass->dynamic);
+        verifyExt(isset($magicMethodsClass->dynamic))->equals(false);
+    });
+
+
+    specify("The __sleep and __wakeup methods will be invoked when serializing and unserializing an object", function () {
+        $connectionItemsStart = $this->magicMethodsClass->getConnectionItems();
+        verify($connectionItemsStart)->isEmpty();
+        $stringValues = serialize($this->magicMethodsClass);
+        $arrayValues = (array) unserialize($stringValues); // Note that protected and private properties will have special characters
+        $classValues = unserialize($stringValues);
+        verify($arrayValues['thing'])->equals(1);
+        verify($classValues->thing)->equals(1);
+    });
+
+
+
+    specify("Will return the classname when cast into a string", function () {
+        verify(strval($this->magicMethodsClass))->equals(MagicMethodsClass::class);
+    });
+
+
+    specify("Can invoke an object", function () {
+        $function = function () {
+            return 'function';
         };
-        $items->funcArgs = function ($value) {
-            return $value;
-        };
-        $items->prop = "prop";
-        $this->magicMethodsClass = new MagicMethodsClass($items);
-    }
+        $class = $this->magicMethodsClass;
+        verify($class($function))->equals('function');
+    });
 
-    /**
-     * @test
-     */
-    public function testCanInvokeAMethodUsingCall()
-    {
-        $this->specify("Will call the items passed in the constructor", function () {
-            verify($this->magicMethodsClass->func())->equals("invoked");
-            verify($this->magicMethodsClass->funcArgs('random arg'))->equals('random arg');
-        });
-    }
 
-    /**
-     * @expectedException InvalidArgumentException
-     * @test
-     */
-    public function testCanThrowAnExceptionOnInvalidCallArgument()
-    {
-        $this->specify("Will throw an exception on an invalid argument", function () {
-            verify($this->magicMethodsClass->nonExistantFunc())->isInstanceOf(InvalidArgumentException::class);
-        });
-    }
+    specify("Can get an object with var_export and return set to true", function () {
+        $value = var_export($this->magicMethodsClass, true);
+        verify($value)->contains('thing');
+    });
 
-    /**
-     * @test
-     */
-    public function testCanAccessAPropertyUsingGet()
-    {
-        $this->specify("Can access a property passed in the constructor", function () {
-            verify($this->magicMethodsClass->prop)->equals('prop');
-        });
-    }
 
-    /**
-     * @test
-     */
-    public function testCanMakeAStaticCallToObject()
-    {
-        $this->specify("A static call to the function can be made", function () {
-            verify(MagicMethodsClass::someFunc())->equals(MagicMethodsClass::class);
-        });
-    }
-
-    /**
-     * @test
-     */
-    public function testCanSetANonExistentPropertyAndCheckifIsset()
-    {
-        $this->specify("A property can be dynamically set and get", function () {
-            $this->magicMethodsClass->dynamic = "dynamic prop";
-            verify($this->magicMethodsClass->dynamic)->equals('dynamic prop');
-            verify(isset($this->magicMethodsClass->dynamic))->equals(true);
-            verify(isset($this->magicMethodsClass->nonexistant))->equals(false);
-            unset($this->magicMethodsClass->dynamic);
-            verify(isset($this->magicMethodsClass->dynamic))->equals(false);
-        });
-    }
-
-    /**
-     * @test
-     */
-    public function testCanSerializeAndDeserializeAnObject()
-    {
-        $this->specify("The __sleep and __wakeup methods will be invoked when serializing and unserializing an object", function () {
-            $connectionItemsStart = $this->magicMethodsClass->getConnectionItems();
-            verify($connectionItemsStart)->isEmpty();
-            $stringValues = serialize($this->magicMethodsClass);
-            $arrayValues = (array) unserialize($stringValues); // Note that protected and private properties will have special characters
-            $classValues = unserialize($stringValues);
-            verify($arrayValues['thing'])->equals(1);
-            verify($classValues->thing)->equals(1);
-        });
-    }
-
-    /**
-     * @test
-     */
-    public function testCanCallToStringMethod()
-    {
-        $this->specify("Will return the classname when cast into a string", function () {
-            verify(strval($this->magicMethodsClass))->equals(MagicMethodsClass::class);
-        });
-    }
-
-    /**
-     * @test
-     */
-    public function testCanInvokeTheObject()
-    {
-        $this->specify("Can invoke an object", function () {
-            $function = function () {
-                return 'function';
-            };
-            $class = $this->magicMethodsClass;
-            verify($class($function))->equals('function');
-        });
-    }
-
-    /**
-     * @test
-     */
-    public function testSetState()
-    {
-        $this->specify("Can get an object with var_export and return set to true", function () {
-            $value = var_export($this->magicMethodsClass, true);
-            verify($value)->contains('thing');
-        });
-    }
-}
 
 if (!isset($noInclude)) {
     require_once __DIR__ . '/../partials/footer.php';

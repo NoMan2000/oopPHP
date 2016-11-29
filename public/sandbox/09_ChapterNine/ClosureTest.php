@@ -4,6 +4,10 @@ namespace ChapterNine;
 use Codeception\Specify;
 use Oopphp\ChapterNine\Closures;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Tests for " . __FILE__;
+require_once __DIR__ . '/../partials/header.php';
+
 /**
  * Class ClosureTest
  * @package ChapterNine

@@ -5,6 +5,10 @@ namespace ChapterNine;
 use Codeception\Specify;
 use Oopphp\ChapterNine\FibonacciGenerator;
 
+require_once __DIR__ . '/../../bootstrap.php';
+$title = "Tests for " . __FILE__;
+require_once __DIR__ . '/../partials/header.php';
+
 /**
  * Class FibonacciGeneratorTest
  * @package ChapterNine
