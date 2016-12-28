@@ -2,52 +2,41 @@
 
 namespace ChapterNine;
 
-use Codeception\Specify;
 use Oopphp\ChapterNine\FibonacciGenerator;
 
 require_once __DIR__ . '/../../bootstrap.php';
 $title = "Tests for " . __FILE__;
 require_once __DIR__ . '/../partials/header.php';
 
+
 /**
- * Class FibonacciGeneratorTest
- * @package ChapterNine
+ * @return FibonacciGenerator
  */
-class FibonacciGeneratorTest extends \Codeception\Test\Unit
-{
-    use Specify;
+$before = function() {
+    return new FibonacciGenerator();
+};
 
+specify($statement = "Can return a generated list", function () use ($before, $statement) {
     /**
-     * @var FibonacciGenerator
+     * @var $fibonacciClass FibonacciGenerator
      */
-    protected $fibonacciClass;
-
-    /**
-     * @before
-     */
-    protected function _before()
-    {
-        $this->fibonacciClass = new FibonacciGenerator();
+    $fibonacciClass = $before();
+    $outerKey = 0;
+    $outerValue = 0;
+    foreach ($fibonacciClass->getSequence(19) as $key => $value) {
+        $outerKey = $key;
+        $outerValue = $value;
     }
+    verifyExt(
+        $statement,
+        $outerKey
+    )->equals(19)->e();
 
-    /**
-     *
-     */
-    public function testCanGenerateAFibonacciSequence()
-    {
-        $this->specify("Can return a generated list", function () {
-            $outerKey = 0;
-            $outerValue = 0;
-            foreach ($this->fibonacciClass->getSequence(19) as $key => $value) {
-                $outerKey = $key;
-                $outerValue = $value;
-            }
-            verify($outerKey)->equals(19);
-            verify($outerValue)->equals(4181);
-        });
-
-    }
-}
+    verifyExt(
+        $statement,
+        $outerValue
+    )->equals(4181)->e();
+});
 
 if (!isset($noInclude)) {
     require_once __DIR__ . '/../partials/footer.php';

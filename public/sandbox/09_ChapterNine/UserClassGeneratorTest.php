@@ -8,38 +8,29 @@ $title = "Tests for " . __FILE__;
 require_once __DIR__ . '/../partials/header.php';
 
 /**
- * Class UserClassGeneratorTest
- * @package ChapterNine
+ * @return UserClassGenerator
  */
-class UserClassGeneratorTest extends \Codeception\Test\Unit
-{
-    use Specify;
-    /**
-     * @var UserClassGenerator
-     */
-    protected $userGenerator;
-    /**
-     * @before
-     */
-    protected function _before()
-    {
-        $this->userGenerator = new UserClassGenerator([
-            'Username' => 'john',
-            'ID' => 100
-        ]);
-    }
+$before = function () {
+    return new UserClassGenerator([
+        'Username' => 'john',
+        'ID' => 100
+    ]);
+};
 
+specify($statement = "An anonymous class can implement the correct contract", function () use ($before, $statement) {
     /**
-     * @test
+     * @var $userGenerator UserClassGenerator
      */
-    public function testCanImplementAContract()
-    {
-        $this->specify("An anonymous class can implement the correct contract", function () {
-            verify($this->userGenerator->getClass()->getID())->equals(100);
-            verify($this->userGenerator->getClass()->getUsername())->equals('john');
-        });
-    }
-}
+    $userGenerator = $before();
+    verifyExt(
+        $statement . '<code>$userGenerator->getClass()->getID()</code>',
+        $userGenerator->getClass()->getID())->equals(100)->e();
+    verifyExt(
+        $statement . '<code>$userGenerator->getClass()->getUsername()</code>',
+        $userGenerator->getClass()->getUsername()
+    )->equals('john')->e();
+});
+
 
 if (!isset($noInclude)) {
     require_once __DIR__ . '/../partials/footer.php';

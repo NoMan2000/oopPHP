@@ -46,7 +46,10 @@ specify($statement = "Can output a failed login", function () use ($before, $sta
     $authClass->failAuth(122);
     $fileLocation = $authClass->getFileLocation();
     $contents = file_get_contents($fileLocation);
-    verifyExt($contents)->contains('122')->e();
+    verifyExt(
+        $statement . '<code>file_get_contents($fileLocation)</code>',
+        $contents
+    )->contains('122')->e();
 });
 
 
@@ -58,7 +61,10 @@ specify($statement = "Can set File Location", function () use ($before, $stateme
     $fileLocation = $authClass->getFileLocation();
     $authClass->setFileLocation($fileLocation);
     $newFileLocation = $authClass->getFileLocation();
-    verifyExt($newFileLocation)->equals($fileLocation)->e();
+    verifyExt(
+        $statement . '<code>$authClass->getFileLocation()</code>',
+        $newFileLocation
+    )->equals($fileLocation)->e();
 });
 
 
