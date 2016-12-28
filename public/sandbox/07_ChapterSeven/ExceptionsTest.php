@@ -14,7 +14,10 @@ specify($statement = "Can convert an error into an exception", function () use (
     try {
         trigger_error("You did something bad");
     } catch (\Exception $e) {
-        verifyExt($e)->isInstanceOf(\ErrorException::class)->e();
+        verifyExt(
+            $statement . '<code>trigger_error("You did something bad");</code>',
+            $e
+        )->isInstanceOf(\ErrorException::class)->e();
     } catch (\Throwable $t) {
 
     }
@@ -28,7 +31,10 @@ specify($statement = "Can suppress an error", function () use ($statement) {
     } catch (\Throwable $t) {
 
     }
-    verifyExt($error)->equals(true)->e();
+    verifyExt(
+        $statement . '<code>@trigger_error("This is something really stupid to do");</code>',
+        $error
+    )->equals(true)->e();
 });
 
 

@@ -34,7 +34,10 @@ specify($statement = "Can output a successful login", function () use($statement
     $authClass->successAuth(122);
     $fileLocation = $authClass->getFileLocation();
     $contents = file_get_contents($fileLocation);
-    verifyExt($contents)->contains('122')->e();
+    verifyExt(
+        $statement . '<code>file_get_contents($fileLocation);</code>',
+        $contents
+    )->contains('122')->e();
 });
 
 
