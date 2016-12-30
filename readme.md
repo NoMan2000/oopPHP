@@ -7,7 +7,7 @@
 - [Composer](https://getcomposer.org/)
 - [PHPStorm](https://www.jetbrains.com/phpstorm/)
 
-VirtualBox is a Virtual Machine that allows you to host a different operating system.
+VirtualBox is a Virtual Machine host that allows you to setup different operating system.  This is important since it allows you to configure a development environment that mirrors a production environment.
 
 Vagrant is a set of directives that installs software into a virtual machine.
 
