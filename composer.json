@@ -2,6 +2,7 @@
     "name": "noman2000/oop-php",
     "description": "A learning package for OOP PHP",
     "require": {
+        "php": ">=7.0",
         "illuminate/support": "^5.3",
         "guzzlehttp/guzzle": "^6.2",
         "psr/log": "^1.0",
@@ -13,12 +14,17 @@
         "codeception/mockery-module": "^0.2.2",
         "codeception/codeception": "^2.2",
         "codeception/specify": "^0.4.5",
-        "codeception/verify": "^0.3.2"
+        "codeception/verify": "^0.3.2",
+        "slim/slim": "2.*",
+        "slim/views": "0.1.*",
+        "twig/twig": "~1.13",
+        "symfony/yaml": "^2.5"
     },
     "autoload": {
         "psr-4": {
             "Oopphp\\": "Oopphp/src",
-            "Sandbox\\": "public/sandbox"
+            "Sandbox\\": "public/sandbox",
+            "App\\": "App"
         },
         "files": ["Oopphp/src/Functions/Functions.php"]
     },

@@ -5,6 +5,6 @@
  * Here it's just a short-hand for using the autoloader.
  */
 
-require_once __DIR__ . '/sandbox/partials/functions.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 
