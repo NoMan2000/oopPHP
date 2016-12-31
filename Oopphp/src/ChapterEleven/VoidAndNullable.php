@@ -29,4 +29,20 @@ class VoidAndNullable
     {
         // perform some action.
     }
+
+    /**
+     * Void can return nothing as a control flow statement, but null cannot be given.
+     */
+    public function goodVoid() : void
+    {
+        return;
+    }
+
+    /**
+     * This will always throw an error immediately
+     */
+//    public function badVoid() : void
+//    {
+//        return null;
+//    }
 }
