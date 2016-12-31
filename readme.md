@@ -21,6 +21,8 @@ PHPStorm is a full IDE built specifically for PHP users.  You can use a differen
 
 ## Notes
 
-Installing on Windows will require extra steps.
+- Installing on Windows will require extra steps and will be covered in a separate movie from the Mac setup.
 
-Nginx error, using php7.0-fpm instead of php7.1-fpm.  This caused an error on initial installation.
+- At the time of this recording, there was an Nginx error, using php7.0-fpm instead of php7.1-fpm.  This caused an error on initial installation.  To fix, go to `/etc/nginx/sites-available` and change the configuration to use php7.1-fpm instead of php7.0-fpm.
+
+- After installation, `sudo phpenmod xdebug` will have to be run from within the machine.  This is to make sure that PHPUnit can run the tests.
