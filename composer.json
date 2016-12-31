@@ -2,7 +2,7 @@
     "name": "noman2000/oop-php",
     "description": "A learning package for OOP PHP",
     "require": {
-        "php": ">=7.0",
+        "php": "^7.0|^5.5",
         "illuminate/support": "^5.3",
         "guzzlehttp/guzzle": "^6.2",
         "psr/log": "^1.0",

@@ -32,6 +32,7 @@ class VoidAndNullable
 
     /**
      * Void can return nothing as a control flow statement, but null cannot be given.
+     * @return void
      */
     public function goodVoid() : void
     {

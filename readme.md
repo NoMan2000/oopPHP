@@ -6,6 +6,7 @@ Though not required, if you want to follow along it is best if you install Larav
 - [Vagrant](https://www.vagrantup.com/)
 - [Composer](https://getcomposer.org/)
 - [PHPStorm](https://www.jetbrains.com/phpstorm/)
+- [Homestead](https://laravel.com/docs/5.3/homestead#per-project-installation)
 
 Make sure to run this command, unless you have a previous key from Git or some other source.
 
