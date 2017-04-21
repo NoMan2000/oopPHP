@@ -48,8 +48,8 @@ class Auth implements LoggerInterface, LoggerAwareInterface
         string $fileLocation = __DIR__ . '/../../../logs/auth.log',
         $whenToLogLevel = Logger::DEBUG
     ) {
-        $this->fileLocation = realpath($fileLocation);
         $this->logger = $logger ?: (new Logger('auth'))->pushHandler(new StreamHandler($fileLocation, $whenToLogLevel));
+        $this->fileLocation = $fileLocation;
     }
 
     /**
@@ -72,7 +72,7 @@ class Auth implements LoggerInterface, LoggerAwareInterface
     public function successAuth(int $userID)
     {
         $this->info
-            ("User with an ID of $userID successfully logged in at " . (new DateTime())->format('Y-m-d H:i:s'),
+            ("User with an ID of $userID successfully logged in at " . (new DateTime("@".time()))->format('Y-m-d H:i:s'),
             [
                 'ip' => '1.0.0.0.1',
                 'id' => $userID,

@@ -8,6 +8,7 @@ cache/*
 public/_output/*
 logs/*
 public/deps/
+.DS_Store
 # Keep the following files regardless of where they are
 
 !.keep

@@ -3,7 +3,11 @@ namespace ChapterEight;
 
 use Codeception\Specify;
 use Oopphp\ChapterEight\Auth;
+
 /**
+ * Note:  These are integration tests because they actually touch files and require things to be set up.
+ * That means a high chance of failure for reasons unrelated to the code.
+ *
  * Class AuthTest
  * @package 8_ChapterEight
  */
@@ -15,6 +19,10 @@ class AuthTest extends \Codeception\Test\Unit
      * @var Auth
      */
     protected $authClass;
+    /**
+     * @var
+     */
+    protected $root;
 
     /**
      * Check if the file exists and empty it out.

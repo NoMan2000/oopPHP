@@ -4,7 +4,7 @@
     "require": {
         "php": "^7.1|^5.5",
         "ext-spl": "*",
-        "illuminate/support": "^5.3",
+        "illuminate/support": "^5.4",
         "guzzlehttp/guzzle": "^6.2",
         "psr/log": "^1.0",
         "monolog/monolog": "^1.21",
@@ -14,12 +14,14 @@
         "symfony/yaml": "^2.5"
     },
     "require-dev": {
-        "laravel/homestead": "^3.0",
-        "psy/psysh": "^0.7.2",
+        "laravel/homestead": "^3.0|^4.0",
+        "psy/psysh": "^0.7|^0.8",
         "codeception/mockery-module": "^0.2.2",
         "codeception/codeception": "^2.2",
         "codeception/specify": "^0.4.5",
-        "codeception/verify": "^0.3.2"
+        "codeception/verify": "^0.3.2",
+        "sllh/composer-versions-check": "^2.0",
+        "mikey179/vfsStream": "^1.6"
     },
     "autoload": {
         "psr-4": {
