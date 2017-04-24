@@ -7,10 +7,6 @@ use org\bovigo\vfs\{vfsStream,vfsStreamDirectory};
 use Mockery as m;
 use Psr\Log\LoggerInterface;
 
-function time() {
-    return 123;
-}
-
 /**
  * Note:  This version of the test uses Mockery to mock the LoggerInterface (so we're not using a real logger)
  *        and it uses vfsStream to mock the file system (so we're never actually writing to the file system)
